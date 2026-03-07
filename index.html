@@ -5,35 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily News BD | দেশ ও মানুষের কণ্ঠস্বর</title>
   <meta name="description" content="Daily News BD - বাংলাদেশের শীর্ষস্থানীয় অনলাইন সংবাদপত্র" />
-
-  <!-- Bootstrap 5.3 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ===== TOP AD BANNER (Leaderboard 728×90) ===== -->
-  <div class="top-ad-bar">
-    <div class="container-fluid px-3 px-lg-5">
-      <div class="d-flex justify-content-center align-items-center">
-        <div class="top-ad-placeholder">
-          <a href="#" class="ad-image-link">
-            <img src="ad-banner.png" alt="বিজ্ঞাপন" class="ad-banner-img" />
-          </a>
-        </div>
-        <button class="ad-close-btn" id="topAdClose" aria-label="Close ad">
-          <i class="bi bi-x"></i>
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- ===== TOP UTILITY BAR ===== -->
   <div class="utility-bar">
@@ -48,10 +27,9 @@
         </div>
         <div class="d-flex align-items-center gap-3">
           <div class="social-icons d-none d-sm-flex gap-2">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/DailyNewsBDonline" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@DailyNewsBDonline" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
             <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           </div>
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
             <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
@@ -62,85 +40,69 @@
     </div>
   </div>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header">
+  <!-- ===== HEADER + NAVBAR (combined, sticky) ===== -->
+  <header class="site-header sticky-top" id="mainNav">
     <div class="container-fluid px-3 px-lg-5">
-      <div class="d-flex justify-content-between align-items-center py-3">
-        <a href="#" class="logo-link">
-          <div class="logo-wrap">
-            <div class="logo-icon">DN</div>
-            <div class="logo-text">
-              <span class="logo-main">Daily News</span>
-              <span class="logo-sub">দেশ ও মানুষের কণ্ঠস্বর</span>
+      <div class="header-inner d-flex align-items-center">
+        <!-- Logo -->
+        <a href="index.html" class="logo-link">
+          <img src="logo.png" alt="Daily News BD" class="site-logo-img" />
+        </a>
+
+        <!-- Nav (centered) -->
+        <nav class="main-nav navbar navbar-expand-lg flex-grow-1 justify-content-center">
+          <div class="mobile-search-wrap d-lg-none ms-auto me-2">
+            <button class="nav-search-mini" id="navSearchToggleMobile" aria-label="Toggle search">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+          <button class="navbar-toggler custom-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNavMenu"
+            aria-controls="mainNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="mainNavMenu">
+            <ul class="navbar-nav align-items-lg-center">
+              <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-fill"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#">জাতীয়</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">রাজনীতি</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">বাণিজ্য</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">বাংলাদেশ</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">প্রবাস</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">বিশ্ব সংবাদ</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">বিনোদন</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">খেলাধুলা</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">অন্যান্য</a>
+                <ul class="dropdown-menu custom-dropdown">
+                  <li><a class="dropdown-item" href="#">তথ্যপ্রযুক্তি</a></li>
+                  <li><a class="dropdown-item" href="#">স্বাস্থ্য</a></li>
+                  <li><a class="dropdown-item" href="#">শিক্ষা</a></li>
+                  <li><a class="dropdown-item" href="#">ধর্ম</a></li>
+                  <li><a class="dropdown-item" href="#">ভ্রমণ</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">মতামত</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="nav-right-pills d-flex align-items-center gap-2 ms-lg-3">
+              <a href="#english-section" class="nav-en-pill">EN</a>
+              <button class="nav-search-mini" id="navSearchToggle" aria-label="Toggle search">
+                <i class="bi bi-search"></i>
+              </button>
             </div>
           </div>
+        </nav>
+
+        <!-- Subscribe -->
+        <a href="#" class="subscribe-btn d-none d-lg-flex">
+          <i class="bi bi-bell-fill me-1"></i> সাবস্ক্রাইব
         </a>
-        <div class="header-ad d-none d-lg-flex align-items-center justify-content-center">
-          <div class="ad-placeholder-header">
-            <a href="#" class="ad-image-link">
-              <img src="ad-banner.png" alt="বিজ্ঞাপন" class="ad-banner-img" />
-            </a>
-          </div>
-        </div>
-        <div class="header-search">
-          <div class="search-box">
-            <input type="text" placeholder="খবর খুঁজুন..." id="searchInput" aria-label="Search news" />
-            <button type="button" id="searchBtn" aria-label="Search"><i class="bi bi-search"></i></button>
-          </div>
-          <a href="#" class="subscribe-btn d-none d-md-flex">
-            <i class="bi bi-bell-fill me-1"></i> সাবস্ক্রাইব
-          </a>
-        </div>
       </div>
     </div>
   </header>
 
-  <!-- ===== STICKY NAVBAR ===== -->
-  <nav class="main-nav navbar navbar-expand-lg sticky-top" id="mainNav">
-    <div class="container-fluid px-3 px-lg-5">
-      <a href="#" class="nav-logo-mini" id="navLogoMini">DN</a>
-
-      <button class="navbar-toggler custom-toggler" type="button"
-        data-bs-toggle="collapse" data-bs-target="#mainNavMenu"
-        aria-controls="mainNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="mainNavMenu">
-        <ul class="navbar-nav me-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-fill"></i> হোম</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">জাতীয়</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">রাজনীতি</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">অর্থনীতি</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">আন্তর্জাতিক</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">খেলাধুলা</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">বিনোদন</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">আরও</a>
-            <ul class="dropdown-menu custom-dropdown">
-              <li><a class="dropdown-item" href="#section-tech">প্রযুক্তি</a></li>
-              <li><a class="dropdown-item" href="#">লাইফস্টাইল</a></li>
-              <li><a class="dropdown-item" href="#">শিক্ষা</a></li>
-              <li><a class="dropdown-item" href="#">স্বাস্থ্য</a></li>
-              <li><a class="dropdown-item" href="#">ধর্ম</a></li>
-              <li><a class="dropdown-item" href="#">ভ্রমণ</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">মতামত</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">চাকরি</a></li>
-        </ul>
-        <div class="nav-right d-flex align-items-center gap-2">
-          <a href="#english-section" class="nav-en-pill">EN</a>
-          <button class="nav-search-mini" id="navSearchToggle" aria-label="Toggle search">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Floating Search Bar (toggled by nav search btn) -->
+  <!-- Floating Search -->
   <div class="floating-search" id="floatingSearch">
     <div class="container-fluid px-3 px-lg-5">
       <div class="d-flex gap-2">
@@ -157,12 +119,12 @@
         <div class="breaking-label"><span>সর্বশেষ</span></div>
         <div class="ticker-wrap">
           <div class="ticker-track" id="tickerTrack">
-            <span class="ticker-item"><i class="bi bi-circle-fill"></i> দেশে প্রথমবারের মতো ৫জি নেটওয়ার্ক চালু হতে যাচ্ছে আগামী মাসে</span>
-            <span class="ticker-item"><i class="bi bi-circle-fill"></i> জাতীয় নির্বাচনের তারিখ ঘোষণা করলো নির্বাচন কমিশন</span>
-            <span class="ticker-item"><i class="bi bi-circle-fill"></i> ঢাকা শেয়ারবাজারে আজ বড় উত্থান, সূচক বাড়লো ১৫৬ পয়েন্ট</span>
-            <span class="ticker-item"><i class="bi bi-circle-fill"></i> বাংলাদেশ ক্রিকেট দল ওয়েস্ট ইন্ডিজের বিপক্ষে সিরিজ জিতেছে</span>
-            <span class="ticker-item"><i class="bi bi-circle-fill"></i> দেশের তাপমাত্রা আরও বাড়বে, আবহাওয়া অধিদপ্তরের পূর্বাভাস</span>
-            <span class="ticker-item"><i class="bi bi-circle-fill"></i> বিশ্বব্যাংক বাংলাদেশকে ৫০০ মিলিয়ন ডলার ঋণ দেবে</span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> নারায়ণগঞ্জের সিদ্ধিরগঞ্জে বিপুল পরিমাণ মাদকসহ ১৫ জন গ্রেফতার</span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> হঠাৎ স্বাস্থ্য কমপ্লেক্স পরিদর্শনে স্বাস্থ্যমন্ত্রী, ১৬ চিকিৎসকের অর্ধেকই অনুপস্থিত</span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> ফেব্রুয়ারি মাসে ২২৭৩টি ফৌজদারি ও ১৭৭৮টি ট্রাফিক মামলা নিষ্পত্তি</span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> প্রতিবেশী দেশগুলোতে আর হামলা চালাবে না ইরান</span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> সাতক্ষীরা সীমান্তে মাদকাসক্ত ১২ লাখ টাকার মালামাল জব্দ করেছে বিজিবি</span>
           </div>
         </div>
       </div>
@@ -177,16 +139,16 @@
       <section class="hero-section my-4" id="section-rashtriya">
         <div class="row g-3">
 
-          <!-- Main Feature Story -->
+          <!-- Main Feature -->
           <div class="col-lg-6">
             <div class="hero-card main-feature">
               <div class="hero-img-wrap">
-                <img src="https://picsum.photos/seed/news1/800/500" alt="প্রধান খবর" loading="eager" />
+                <img src="https://picsum.photos/seed/dnbd1/800/500" alt="প্রধান খবর" loading="eager" />
                 <div class="hero-overlay"></div>
                 <span class="story-cat-badge">জাতীয়</span>
                 <div class="hero-text-overlay">
-                  <span class="story-meta-light">৭ মার্চ, ২০২৬ • ১০ মিনিট আগে</span>
-                  <h1 class="hero-headline-overlay">দেশের অর্থনৈতিক পুনরুদ্ধারে নতুন মাইলফলক, জিডিপি প্রবৃদ্ধি ৭.৫% ছাড়িয়েছে</h1>
+                  <span class="story-meta-light">৮ মার্চ, ২০২৬ • DNBD</span>
+                  <h1 class="hero-headline-overlay">নারায়ণগঞ্জে ভূমি অফিসের কর্মকর্তা আড়াইহাজারে বদলীর একদিন পর পুনরায় গোপালগঞ্জে বদলি</h1>
                   <a href="#" class="hero-read-btn">বিস্তারিত <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
@@ -198,31 +160,31 @@
             <div class="d-flex flex-column gap-3 h-100">
               <div class="side-story-card">
                 <div class="row g-2">
-                  <div class="col-5"><img src="https://picsum.photos/seed/news2/300/200" alt="খবর" class="side-img" /></div>
+                  <div class="col-5"><img src="https://picsum.photos/seed/dnbd2/300/200" alt="খবর" class="side-img" /></div>
                   <div class="col-7">
                     <span class="story-cat-tag politics">রাজনীতি</span>
-                    <h3 class="side-headline">নতুন মন্ত্রিসভা গঠন প্রক্রিয়া শুরু, শপথগ্রহণ শনিবার</h3>
-                    <span class="story-time">৩০ মিনিট আগে</span>
+                    <h3 class="side-headline">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</h3>
+                    <span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ১৮</span>
                   </div>
                 </div>
               </div>
               <div class="side-story-card">
                 <div class="row g-2">
-                  <div class="col-5"><img src="https://picsum.photos/seed/news3/300/200" alt="খবর" class="side-img" /></div>
+                  <div class="col-5"><img src="https://picsum.photos/seed/dnbd3/300/200" alt="খবর" class="side-img" /></div>
                   <div class="col-7">
-                    <span class="story-cat-tag economy">অর্থনীতি</span>
-                    <h3 class="side-headline">রেমিটেন্স প্রবাহে নতুন রেকর্ড, মার্চে এলো ২৮০ কোটি ডলার</h3>
-                    <span class="story-time">১ ঘণ্টা আগে</span>
+                    <span class="story-cat-tag national">জাতীয়</span>
+                    <h3 class="side-headline">হঠাৎ স্বাস্থ্য কমপ্লেক্স পরিদর্শনে স্বাস্থ্যমন্ত্রী, ১৬ চিকিৎসকের অর্ধেকই অনুপস্থিত</h3>
+                    <span class="story-time">DNBD • মার্চ ০৭</span>
                   </div>
                 </div>
               </div>
               <div class="side-story-card">
                 <div class="row g-2">
-                  <div class="col-5"><img src="https://picsum.photos/seed/news4/300/200" alt="খবর" class="side-img" /></div>
+                  <div class="col-5"><img src="https://picsum.photos/seed/dnbd4/300/200" alt="খবর" class="side-img" /></div>
                   <div class="col-7">
                     <span class="story-cat-tag intl">আন্তর্জাতিক</span>
-                    <h3 class="side-headline">মধ্যপ্রাচ্যে যুদ্ধবিরতি চুক্তি, আন্তর্জাতিক মহলে স্বস্তি</h3>
-                    <span class="story-time">২ ঘণ্টা আগে</span>
+                    <h3 class="side-headline">প্রতিবেশী দেশগুলোতে আর হামলা চালাবে না ইরান</h3>
+                    <span class="story-time">Editor • মার্চ ০৭</span>
                   </div>
                 </div>
               </div>
@@ -237,13 +199,13 @@
                 <a href="#">সব দেখুন</a>
               </div>
               <ul class="latest-list">
-                <li><span class="latest-time">১০:৪৫</span><a href="#">ঢাকায় বৃষ্টির পূর্বাভাস, তাপমাত্রা কমতে পারে</a></li>
-                <li><span class="latest-time">১০:২০</span><a href="#">পদ্মা সেতুতে টোল আদায় ৫০০ কোটি ছাড়িয়েছে</a></li>
-                <li><span class="latest-time">০৯:৫৫</span><a href="#">বিশ্ববিদ্যালয় ভর্তি পরীক্ষার তারিখ প্রকাশ</a></li>
-                <li><span class="latest-time">০৯:৩০</span><a href="#">গ্যাসের মূল্য বৃদ্ধির প্রস্তাব, সিদ্ধান্ত মাসের শেষে</a></li>
-                <li><span class="latest-time">০৯:১০</span><a href="#">বন্দরে পণ্যজট, আমদানি খরচ বাড়ছে</a></li>
-                <li><span class="latest-time">০৮:৪৫</span><a href="#">শিক্ষা মন্ত্রণালয়ের নতুন কারিকুলাম বাস্তবায়ন শুরু</a></li>
-                <li><span class="latest-time">০৮:২০</span><a href="#">চট্টগ্রাম বন্দরে রেকর্ড কনটেইনার হ্যান্ডলিং</a></li>
+                <li><span class="latest-time">মার্চ ০৮</span><a href="#">কেন্দ্রীয় শহীদ মিনারে কবি মাহমুদুল হাসান নিজামীর জানাজা অনুষ্ঠিত</a></li>
+                <li><span class="latest-time">মার্চ ০৭</span><a href="#">রাজশাহীবাড়িয়া জেলা কারাগারে এক হাজতির মৃত্যু</a></li>
+                <li><span class="latest-time">মার্চ ০৭</span><a href="#">নড়াইলে দুইপক্ষের সংঘর্ষে ইউপি মেম্বারসহ আহত ১৫</a></li>
+                <li><span class="latest-time">মার্চ ০৭</span><a href="#">বেনাপোল সীমান্তে বিজিবির অভিযানে মাদকসহ আটক ১</a></li>
+                <li><span class="latest-time">মার্চ ০৭</span><a href="#">গোলকুড়ায় রাজা নির্মাণকে কেন্দ্র করে দুই পক্ষের সংঘর্ষ, আহত ১</a></li>
+                <li><span class="latest-time">মার্চ ০৬</span><a href="#">ঝিনাইদহে জাতীয় পাট দিবসের র‍্যালি ও আলোচনা সভা</a></li>
+                <li><span class="latest-time">মার্চ ০৬</span><a href="#">সোনারগাঁয়ে পিস্তল ও গুলিসহ যুবক আটক</a></li>
               </ul>
             </div>
           </div>
@@ -251,7 +213,7 @@
         </div>
       </section>
 
-      <!-- ===== TRENDING SECTION ===== -->
+      <!-- ===== TRENDING ===== -->
       <section class="trending-section mb-4">
         <div class="section-head d-flex justify-content-between align-items-center mb-3">
           <h2 class="section-title"><span>প্রধান খবর</span></h2>
@@ -262,28 +224,28 @@
           <div class="trending-scroll" id="trendingScroll">
             <div class="trending-track" id="trendingTrack">
               <div class="trend-card">
-                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr1/300/200" alt="খবর" /><span class="trend-num">০১</span></div>
-                <div class="trend-body"><span class="story-cat-tag national">জাতীয়</span><h4>শিক্ষকদের বেতন স্কেল পুনর্বিন্যাস হচ্ছে, নতুন প্রজ্ঞাপন জারি</h4><span class="story-time">৪৫ মিনিট আগে</span></div>
+                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr11/300/200" alt="খবর" /><span class="trend-num">০১</span></div>
+                <div class="trend-body"><span class="story-cat-tag national">জাতীয়</span><h4>ফেব্রুয়ারি মাসে ২২৭৩টি ফৌজদারি ও ১৭৭৮টি ট্রাফিক মামলা নিষ্পত্তি</h4><span class="story-time">DNBD MEDIA • মার্চ ০৭</span></div>
               </div>
               <div class="trend-card">
-                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr2/300/200" alt="খবর" /><span class="trend-num">০২</span></div>
-                <div class="trend-body"><span class="story-cat-tag economy">অর্থনীতি</span><h4>ডলারের দাম কমলো, রিজার্ভ বাড়ছে ধারাবাহিকভাবে</h4><span class="story-time">১ ঘণ্টা আগে</span></div>
+                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr12/300/200" alt="খবর" /><span class="trend-num">০২</span></div>
+                <div class="trend-body"><span class="story-cat-tag politics">রাজনীতি</span><h4>প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন, কে কোন দায়িত্ব পেলেন?</h4><span class="story-time">Editor • ফেব্রুয়ারি ২১</span></div>
               </div>
               <div class="trend-card">
-                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr3/300/200" alt="খবর" /><span class="trend-num">০৩</span></div>
-                <div class="trend-body"><span class="story-cat-tag sports">খেলাধুলা</span><h4>সাকিবের অবিশ্বাস্য সেঞ্চুরি, বাংলাদেশ জিতলো রোমাঞ্চকর ম্যাচ</h4><span class="story-time">২ ঘণ্টা আগে</span></div>
+                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr13/300/200" alt="খবর" /><span class="trend-num">০৩</span></div>
+                <div class="trend-body"><span class="story-cat-tag intl">আন্তর্জাতিক</span><h4>লেবাননে ইসরাইলের বিমান হামলায় নিহত ৩১</h4><span class="story-time">Editor • মার্চ ০২</span></div>
               </div>
               <div class="trend-card">
-                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr4/300/200" alt="খবর" /><span class="trend-num">০৪</span></div>
-                <div class="trend-body"><span class="story-cat-tag intl">আন্তর্জাতিক</span><h4>জাতিসংঘে বাংলাদেশের নতুন প্রস্তাব সর্বসম্মতিতে গৃহীত</h4><span class="story-time">৩ ঘণ্টা আগে</span></div>
+                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr14/300/200" alt="খবর" /><span class="trend-num">০৪</span></div>
+                <div class="trend-body"><span class="story-cat-tag national">জাতীয়</span><h4>নারায়ণগঞ্জের সিদ্ধিরগঞ্জে বিপুল পরিমাণ মাদকসহ ১৫ জন গ্রেফতার</h4><span class="story-time">DNBD • মার্চ ০৭</span></div>
               </div>
               <div class="trend-card">
-                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr5/300/200" alt="খবর" /><span class="trend-num">০৫</span></div>
-                <div class="trend-body"><span class="story-cat-tag politics">রাজনীতি</span><h4>বিরোধী দলের হরতাল প্রত্যাহার, পরিস্থিতি স্বাভাবিক</h4><span class="story-time">৪ ঘণ্টা আগে</span></div>
+                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr15/300/200" alt="খবর" /><span class="trend-num">০৫</span></div>
+                <div class="trend-body"><span class="story-cat-tag politics">রাজনীতি</span><h4>তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন</h4><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ১৮</span></div>
               </div>
               <div class="trend-card">
-                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr6/300/200" alt="খবর" /><span class="trend-num">০৬</span></div>
-                <div class="trend-body"><span class="story-cat-tag tech">প্রযুক্তি</span><h4>দেশীয় সফটওয়্যার কোম্পানির পণ্য যাচ্ছে ৪০টি দেশে</h4><span class="story-time">৫ ঘণ্টা আগে</span></div>
+                <div class="trend-img-wrap"><img src="https://picsum.photos/seed/tr16/300/200" alt="খবর" /><span class="trend-num">০৬</span></div>
+                <div class="trend-body"><span class="story-cat-tag intl">আন্তর্জাতিক</span><h4>ইয়েমেন হতে ইসরাইলে হামলা, পাকিস্তানজুড়ে সহিংসতায় নিহত ২৩</h4><span class="story-time">Editor • মার্চ ০২</span></div>
               </div>
             </div>
           </div>
@@ -293,7 +255,6 @@
 
       <!-- ===== TWO COLUMN: CONTENT + SIDEBAR ===== -->
       <div class="row g-4 mb-4">
-
         <div class="col-lg-8">
 
           <!-- POLITICS -->
@@ -306,14 +267,14 @@
               <div class="col-md-6">
                 <div class="news-card lead-card">
                   <div class="news-card-img">
-                    <img src="https://picsum.photos/seed/pol1/600/380" alt="রাজনীতি" />
+                    <img src="https://picsum.photos/seed/pol11/600/380" alt="রাজনীতি" />
                     <span class="story-cat-badge">রাজনীতি</span>
                   </div>
                   <div class="news-card-body">
-                    <h3>নির্বাচন কমিশন পুনর্গঠনে সরকারের বড় উদ্যোগ, সংলাপ শুরু হচ্ছে আগামীকাল</h3>
-                    <p>নির্বাচন কমিশন পুনর্গঠনের জন্য সব রাজনৈতিক দলের সাথে সংলাপে বসতে চায় সরকার।</p>
+                    <h3>বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</h3>
+                    <p>নতুন মন্ত্রিসভা গঠনের পর দেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান। তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন।</p>
                     <div class="news-card-meta">
-                      <span><i class="bi bi-clock"></i> ২ ঘণ্টা আগে</span>
+                      <span><i class="bi bi-person"></i> DNBD MEDIA • ফেব্রুয়ারি ১৮, ২০২৬</span>
                       <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
                     </div>
                   </div>
@@ -323,26 +284,26 @@
                 <div class="d-flex flex-column gap-3">
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/pol2/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>সংসদ অধিবেশন শুরু, গুরুত্বপূর্ণ বিল পাসের অপেক্ষা</h4><span class="story-time">৩ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/pol12/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন, কে কোন দায়িত্ব পেলেন?</h4><span class="story-time">Editor • ফেব্রুয়ারি ২১</span></div>
                     </div>
                   </div>
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/pol3/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>বিরোধী দলীয় নেতার মুক্তির দাবিতে জনসভা অনুষ্ঠিত</h4><span class="story-time">৪ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/pol13/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>নাহিদ ইসলামকে প্রধান উপদেষ্টার বাড়ি</h4><span class="story-time">Editor • ফেব্রুয়ারি ১৪</span></div>
                     </div>
                   </div>
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/pol4/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>স্থানীয় সরকার নির্বাচন নভেম্বরে হওয়ার সম্ভাবনা</h4><span class="story-time">৫ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/pol14/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>আগামী ১৭ ফেব্রুয়ারির মধ্যে সংসদ সদস্য শপথ: শিফিকুল আলম</h4><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ১৩</span></div>
                     </div>
                   </div>
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/pol5/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>মন্ত্রী পরিষদের বৈঠকে একাধিক সিদ্ধান্ত গৃহীত</h4><span class="story-time">৬ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/pol15/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>মর্মিন্ত্রী হিসেবে শপথ নিলেন কায়কোবাদ</h4><span class="story-time">Editor • ফেব্রুয়ারি ১৮</span></div>
                     </div>
                   </div>
                 </div>
@@ -350,30 +311,30 @@
             </div>
           </section>
 
-          <!-- ECONOMY -->
+          <!-- BANGLADESH / ECONOMY -->
           <section class="news-section mb-5" id="section-economy">
             <div class="section-head d-flex justify-content-between align-items-center mb-3">
-              <h2 class="section-title"><span class="section-dot economy-dot"></span><span>অর্থনীতি</span></h2>
+              <h2 class="section-title"><span class="section-dot economy-dot"></span><span>বাংলাদেশ</span></h2>
               <a href="#" class="see-all">সব দেখুন <i class="bi bi-chevron-right"></i></a>
             </div>
             <div class="market-strip mb-3">
-              <div class="market-item up"><span class="market-label">DSEX</span><span class="market-value">৬,২৪৫</span><span class="market-change"><i class="bi bi-caret-up-fill"></i> ১.২৪%</span></div>
+              <div class="market-item up"><span class="market-label">DSEX</span><span class="market-value">৬,১২৩</span><span class="market-change"><i class="bi bi-caret-up-fill"></i> ০.৮%</span></div>
               <div class="market-item down"><span class="market-label">USD/BDT</span><span class="market-value">১১০.৫০</span><span class="market-change"><i class="bi bi-caret-down-fill"></i> ০.৩%</span></div>
-              <div class="market-item up"><span class="market-label">সোনা</span><span class="market-value">৯৮,৫০০৳</span><span class="market-change"><i class="bi bi-caret-up-fill"></i> ০.৮%</span></div>
-              <div class="market-item up"><span class="market-label">জ্বালানি তেল</span><span class="market-value">$৭২.৪</span><span class="market-change"><i class="bi bi-caret-up-fill"></i> ০.৫%</span></div>
+              <div class="market-item up"><span class="market-label">সোনা</span><span class="market-value">৯৮,৫০০৳</span><span class="market-change"><i class="bi bi-caret-up-fill"></i> ০.৫%</span></div>
+              <div class="market-item up"><span class="market-label">জ্বালানি তেল</span><span class="market-value">$৭২.৪</span><span class="market-change"><i class="bi bi-caret-up-fill"></i> ০.৪%</span></div>
             </div>
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="news-card lead-card">
                   <div class="news-card-img">
-                    <img src="https://picsum.photos/seed/eco1/600/380" alt="অর্থনীতি" />
-                    <span class="story-cat-badge economy-badge">অর্থনীতি</span>
+                    <img src="https://picsum.photos/seed/eco11/600/380" alt="বাংলাদেশ" />
+                    <span class="story-cat-badge economy-badge">জাতীয়</span>
                   </div>
                   <div class="news-card-body">
-                    <h3>বাজেটে কৃষি ও শিল্পে বরাদ্দ বাড়ছে, নতুন কর্মসংস্থান সৃষ্টির পরিকল্পনা</h3>
-                    <p>আগামী অর্থবছরের জাতীয় বাজেটে কৃষি ও শিল্প খাতে উল্লেখযোগ্য বরাদ্দ বাড়ানোর পরিকল্পনা করছে সরকার।</p>
+                    <h3>আসামি সোমবার দুই জাহাজে তেল আসছে, উৎসের কারণ নেই: জ্বালানি মন্ত্রী</h3>
+                    <p>জ্বালানি মন্ত্রী জানিয়েছেন সোমবার দুটি জাহাজে জ্বালানি তেল আসছে এবং এতে সরবরাহে কোনো সংকট থাকবে না।</p>
                     <div class="news-card-meta">
-                      <span><i class="bi bi-clock"></i> ১ ঘণ্টা আগে</span>
+                      <span><i class="bi bi-person"></i> DNBD MEDIA • মার্চ ০৭, ২০২৬</span>
                       <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
                     </div>
                   </div>
@@ -383,26 +344,26 @@
                 <div class="d-flex flex-column gap-3">
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/eco2/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>রপ্তানি আয়ে নতুন রেকর্ড, পোশাক শিল্পে প্রবৃদ্ধি ১২%</h4><span class="story-time">২ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/eco12/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>রমজানের শুরুতেই লেবুর হালি ২০০ টাকা</h4><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ১৯</span></div>
                     </div>
                   </div>
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/eco3/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>বিদেশি বিনিয়োগ বাড়ছে, নতুন শিল্পজোন স্থাপিত হচ্ছে</h4><span class="story-time">৩ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/eco13/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>হঠাৎ মোটরসাইকেলের ট্যাংক ফুল করতে ভিড় বাড়ছে যশোরের পেট্রোল পাম্পে</h4><span class="story-time">DNBD MEDIA • মার্চ ০৩</span></div>
                     </div>
                   </div>
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/eco4/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>মূল্যস্ফীতি নিয়ন্ত্রণে কেন্দ্রীয় ব্যাংকের নতুন নীতি</h4><span class="story-time">৪ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/eco14/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>পুলিশ সার্জেন্টের ১৮০টি শূন্যপদে মন্ত্রণালয় থেকে সিদ্ধান্ত নেওয়া হবে</h4><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ২৮</span></div>
                     </div>
                   </div>
                   <div class="news-card mini-card">
                     <div class="row g-2 align-items-center">
-                      <div class="col-4"><img src="https://picsum.photos/seed/eco5/200/140" alt="খবর" class="mini-img" /></div>
-                      <div class="col-8"><h4>কৃষি ঋণ বিতরণে রেকর্ড, সুদের হার কমানো হয়েছে</h4><span class="story-time">৫ ঘণ্টা আগে</span></div>
+                      <div class="col-4"><img src="https://picsum.photos/seed/eco15/200/140" alt="খবর" class="mini-img" /></div>
+                      <div class="col-8"><h4>ঝিনাইদহে সড়ক নির্মাণে ৮ কোটি টাকার বেশি চেক বিতরণ</h4><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ২৫</span></div>
                     </div>
                   </div>
                 </div>
@@ -419,31 +380,31 @@
             <div class="row g-3">
               <div class="col-md-4">
                 <div class="news-card v-card">
-                  <img src="https://picsum.photos/seed/int1/400/260" alt="আন্তর্জাতিক" />
+                  <img src="https://picsum.photos/seed/int11/400/260" alt="আন্তর্জাতিক" />
                   <div class="news-card-body">
                     <span class="story-cat-tag intl">আন্তর্জাতিক</span>
-                    <h4>রাশিয়া-ইউক্রেন যুদ্ধবিরতি আলোচনায় নতুন অগ্রগতি</h4>
-                    <span class="story-time">২ ঘণ্টা আগে</span>
+                    <h4>লেবাননে ইসরাইলের বিমান হামলায় নিহত ৩১</h4>
+                    <span class="story-time">Editor • মার্চ ০২, ২০২৬</span>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="news-card v-card">
-                  <img src="https://picsum.photos/seed/int2/400/260" alt="আন্তর্জাতিক" />
+                  <img src="https://picsum.photos/seed/int12/400/260" alt="আন্তর্জাতিক" />
                   <div class="news-card-body">
                     <span class="story-cat-tag intl">আন্তর্জাতিক</span>
-                    <h4>ভারত-চীন সম্পর্কে নতুন উষ্ণতা, সীমান্ত বৈঠক সফল</h4>
-                    <span class="story-time">৩ ঘণ্টা আগে</span>
+                    <h4>ইয়েমেন হতে ইসরাইলে হামলা, পাকিস্তানজুড়ে সহিংসতায় নিহত ২৩</h4>
+                    <span class="story-time">Editor • মার্চ ০২, ২০২৬</span>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="news-card v-card">
-                  <img src="https://picsum.photos/seed/int3/400/260" alt="আন্তর্জাতিক" />
+                  <img src="https://picsum.photos/seed/int13/400/260" alt="আন্তর্জাতিক" />
                   <div class="news-card-body">
                     <span class="story-cat-tag intl">আন্তর্জাতিক</span>
-                    <h4>জলবায়ু পরিবর্তন মোকাবেলায় জি-২০ নতুন চুক্তি করেছে</h4>
-                    <span class="story-time">৪ ঘণ্টা আগে</span>
+                    <h4>ভিসা নিয়ে বাংলাদেশসহ কিছু দেশের জন্য যুক্তরাষ্ট্রের নতুন বার্তা</h4>
+                    <span class="story-time">Editor • মার্চ ০২, ২০২৬</span>
                   </div>
                 </div>
               </div>
@@ -458,11 +419,11 @@
             <div class="sidebar-widget mb-4">
               <div class="widget-header"><h3><i class="bi bi-fire"></i> সর্বাধিক পঠিত</h3></div>
               <ol class="most-read-list">
-                <li><span class="mr-num">০১</span><a href="#">রাজধানীতে যানজট নিরসনে নতুন ফ্লাইওভারের কাজ শুরু</a></li>
-                <li><span class="mr-num">০২</span><a href="#">বিশ্ববিদ্যালয় ভর্তির ফলাফল প্রকাশিত, আনন্দে মাতোয়ারা শিক্ষার্থীরা</a></li>
-                <li><span class="mr-num">০৩</span><a href="#">পোশাক শিল্পে নতুন মজুরি কাঠামো কার্যকর</a></li>
-                <li><span class="mr-num">০৪</span><a href="#">দেশে প্রথম সাবমেরিন ক্যাবল স্থাপন সম্পন্ন</a></li>
-                <li><span class="mr-num">০৫</span><a href="#">ইলিশ রপ্তানিতে নিষেধাজ্ঞা উঠল, বাজারে দাম কমবে</a></li>
+                <li><span class="mr-num">০১</span><a href="#">নারায়ণগঞ্জের সিদ্ধিরগঞ্জে বিপুল পরিমাণ মাদকসহ ১৫ জন গ্রেফতার</a></li>
+                <li><span class="mr-num">০২</span><a href="#">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</a></li>
+                <li><span class="mr-num">০৩</span><a href="#">ফেব্রুয়ারি মাসে ২২৭৩টি ফৌজদারি ও ১৭৭৮টি ট্রাফিক মামলা নিষ্পত্তি</a></li>
+                <li><span class="mr-num">০৪</span><a href="#">হঠাৎ স্বাস্থ্য কমপ্লেক্স পরিদর্শনে স্বাস্থ্যমন্ত্রী, ১৬ চিকিৎসকের অর্ধেকই অনুপস্থিত</a></li>
+                <li><span class="mr-num">০৫</span><a href="#">প্রতিবেশী দেশগুলোতে আর হামলা চালাবে না ইরান</a></li>
               </ol>
             </div>
 
@@ -470,18 +431,18 @@
               <div class="widget-header"><h3><i class="bi bi-pencil-square"></i> মতামত</h3></div>
               <div class="opinion-card">
                 <div class="opinion-author">
-                  <img src="https://picsum.photos/seed/auth1/80/80" alt="লেখক" />
-                  <div><strong>ড. মোহাম্মদ ইউনুস</strong><span>অর্থনীতিবিদ</span></div>
+                  <img src="https://picsum.photos/seed/auth11/80/80" alt="লেখক" />
+                  <div><strong>এস এম মিরাজ হোসেন টিপু</strong><span>প্রধান সম্পাদক</span></div>
                 </div>
-                <h4>গণতন্ত্র ও উন্নয়নের সমন্বয়ই হোক আমাদের লক্ষ্য</h4>
+                <h4>দেশটাকে জ্ঞানের আলোয় আলোকিত করতে হবে</h4>
                 <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
               </div>
               <div class="opinion-card mt-3">
                 <div class="opinion-author">
-                  <img src="https://picsum.photos/seed/auth2/80/80" alt="লেখক" />
-                  <div><strong>প্রফেসর আনিসুজ্জামান</strong><span>শিক্ষাবিদ</span></div>
+                  <img src="https://picsum.photos/seed/auth12/80/80" alt="লেখক" />
+                  <div><strong>মো. লুৎফর রহমান (খাজা শাহ)</strong><span>নির্বাহী সম্পাদক</span></div>
                 </div>
-                <h4>শিক্ষা সংস্কারে যা বলছেন বিশেষজ্ঞরা</h4>
+                <h4>সীমান্তে মাদক পাচার রোধে আরও কঠোর হতে হবে</h4>
                 <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
@@ -490,29 +451,29 @@
               <div class="widget-header"><h3><i class="bi bi-play-circle-fill"></i> ভিডিও</h3></div>
               <div class="video-item mb-3">
                 <div class="video-thumb">
-                  <img src="https://picsum.photos/seed/vid1/300/170" alt="ভিডিও" />
+                  <img src="https://picsum.photos/seed/vid11/300/170" alt="ভিডিও" />
                   <div class="play-btn"><i class="bi bi-play-fill"></i></div>
-                  <span class="vid-duration">৪:৩২</span>
+                  <span class="vid-duration">৫:২০</span>
                 </div>
-                <h5>মন্ত্রীর সাথে একান্ত সাক্ষাৎকার: উন্নয়নের রোডম্যাপ</h5>
+                <h5>সীমান্তে মাদক পাচার: বিজিবির বিশেষ অভিযান</h5>
               </div>
               <div class="video-item">
                 <div class="video-thumb">
-                  <img src="https://picsum.photos/seed/vid2/300/170" alt="ভিডিও" />
+                  <img src="https://picsum.photos/seed/vid12/300/170" alt="ভিডিও" />
                   <div class="play-btn"><i class="bi bi-play-fill"></i></div>
-                  <span class="vid-duration">৭:১৫</span>
+                  <span class="vid-duration">৩:৪৫</span>
                 </div>
-                <h5>বিশেষ প্রতিবেদন: বন্যার পরে কৃষকের জীবন</h5>
+                <h5>নতুন প্রধানমন্ত্রীর শপথগ্রহণ অনুষ্ঠানের বিশেষ প্রতিবেদন</h5>
               </div>
             </div>
 
             <div class="sidebar-widget social-widget">
               <div class="widget-header"><h3>আমাদের অনুসরণ করুন</h3></div>
               <div class="social-follow-grid">
-                <a href="#" class="sf-btn fb"><i class="bi bi-facebook"></i> ২.৪ লাখ</a>
-                <a href="#" class="sf-btn yt"><i class="bi bi-youtube"></i> ১.৮ লাখ</a>
-                <a href="#" class="sf-btn tw"><i class="bi bi-twitter-x"></i> ৮৫ হাজার</a>
-                <a href="#" class="sf-btn ig"><i class="bi bi-instagram"></i> ৬২ হাজার</a>
+                <a href="https://www.facebook.com/DailyNewsBDonline" class="sf-btn fb"><i class="bi bi-facebook"></i> ফেসবুক</a>
+                <a href="https://www.youtube.com/@DailyNewsBDonline" class="sf-btn yt"><i class="bi bi-youtube"></i> ইউটিউব</a>
+                <a href="#" class="sf-btn tw"><i class="bi bi-twitter-x"></i> টুইটার</a>
+                <a href="#" class="sf-btn ig"><i class="bi bi-instagram"></i> ইনস্টাগ্রাম</a>
               </div>
             </div>
           </aside>
@@ -530,14 +491,13 @@
           <div class="col-lg-5">
             <div class="news-card lead-card sports-lead">
               <div class="news-card-img">
-                <img src="https://picsum.photos/seed/spt1/700/420" alt="খেলাধুলা" />
-                <div class="score-badge">BD ১৮৫/৪ • WI ১৭৮</div>
-                <span class="story-cat-badge sports-badge">ক্রিকেট</span>
+                <img src="https://picsum.photos/seed/spt11/700/420" alt="খেলাধুলা" />
+                <span class="story-cat-badge sports-badge">খেলাধুলা</span>
               </div>
               <div class="news-card-body">
-                <h3>ঐতিহাসিক জয়! বাংলাদেশ ওয়ানডে সিরিজে ওয়েস্ট ইন্ডিজকে হোয়াইটওয়াশ করেছে</h3>
+                <h3>আশিফ হাসান সাগর — ৪০ বছর বয়সে নতুন চ্যান্সেলর, আসছে ডকুমেন্টারি ফিল্ম "THE LION"</h3>
                 <div class="news-card-meta">
-                  <span><i class="bi bi-clock"></i> ১ ঘণ্টা আগে</span>
+                  <span><i class="bi bi-person"></i> Editor • ফেব্রুয়ারি ১৮, ২০২৬</span>
                   <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
@@ -545,10 +505,10 @@
           </div>
           <div class="col-lg-7">
             <div class="row g-3">
-              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt2/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">ফুটবল</span><h4>জাতীয় ফুটবল দলের প্রধান কোচ নিয়োগ চূড়ান্ত</h4><span class="story-time">২ ঘণ্টা আগে</span></div></div></div>
-              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt3/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">অ্যাথলেটিক্স</span><h4>এশিয়ান গেমসে বাংলাদেশের স্বর্ণজয়, ইতিহাস সৃষ্টি</h4><span class="story-time">৩ ঘণ্টা আগে</span></div></div></div>
-              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt4/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">দাবা</span><h4>আন্তর্জাতিক দাবায় বাংলাদেশ চ্যাম্পিয়ন</h4><span class="story-time">৪ ঘণ্টা আগে</span></div></div></div>
-              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt5/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">ক্রিকেট</span><h4>বিপিএলের নতুন মৌসুমের দল ঘোষণা, নতুন মুখ</h4><span class="story-time">৫ ঘণ্টা আগে</span></div></div></div>
+              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt12/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">জাতীয়</span><h4>৩ থেকে ৭ বছর পর ভারত থেকে দেশে ফিরল বাংলাদেশি ১৮ শিশু</h4><span class="story-time">Editor • ফেব্রুয়ারি ১৮</span></div></div></div>
+              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt13/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">ক্রিকেট</span><h4>আন্তর্জাতিক দাবায় বাংলাদেশ চ্যাম্পিয়ন, ইতিহাস সৃষ্টি</h4><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ২০</span></div></div></div>
+              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt14/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">পরিবেশ</span><h4>বিশ্ব ঐতিহ্য সুন্দরবন উপকূলে জলবায়ু বিপর্যয়: বাড়ছে দুর্যোগ</h4><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ১৫</span></div></div></div>
+              <div class="col-sm-6"><div class="news-card v-card"><img src="https://picsum.photos/seed/spt15/400/240" alt="খেলা" /><div class="news-card-body"><span class="story-cat-tag sports">প্রকৃতি</span><h4>বেনাপোল তাল গাছের ঝুলন্তায় বাবুই পাখির লড়াই</h4><span class="story-time">Editor • ফেব্রুয়ারি ১৫</span></div></div></div>
             </div>
           </div>
         </div>
@@ -561,23 +521,63 @@
           <a href="#" class="see-all">সব দেখুন <i class="bi bi-chevron-right"></i></a>
         </div>
         <div class="row g-3">
-          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent1/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">চলচ্চিত্র</span><h5>নতুন বাংলা চলচ্চিত্র মুক্তি পাচ্ছে ঈদে</h5></div></div></div>
-          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent2/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">সংগীত</span><h5>জনপ্রিয় শিল্পীর নতুন অ্যালবাম প্রকাশিত</h5></div></div></div>
-          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent3/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">নাটক</span><h5>রমজানের বিশেষ নাটক নিয়ে দর্শকের উচ্ছ্বাস</h5></div></div></div>
-          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent4/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">পুরস্কার</span><h5>জাতীয় চলচ্চিত্র পুরস্কারের মনোনয়ন তালিকা প্রকাশ</h5></div></div></div>
+          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent11/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">বিনোদন</span><h5>নায়িকা বানানোর আশ্বাসে ধর্ষণের অভিযোগ, হিরো আলম গ্রেপ্তার</h5></div></div></div>
+          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent12/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">চলচ্চিত্র</span><h5>আশিফ হাসান সাগর — THE LION ডকুমেন্টারি আসছে</h5></div></div></div>
+          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent13/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">বিনোদন</span><h5>দিলরুবাই নামে সংসবরের প্রেম, প্রামিতো হওয়ার পর সায়মকে ডিভোর্স</h5></div></div></div>
+          <div class="col-6 col-md-3"><div class="ent-card"><img src="https://picsum.photos/seed/ent14/300/360" alt="বিনোদন" /><div class="ent-overlay"><span class="story-cat-tag">সংগীত</span><h5>রমজান মাসে বিশেষ নাটক ও অনুষ্ঠান নিয়ে দর্শকের উৎসাহ</h5></div></div></div>
         </div>
       </section>
 
-      <!-- ===== TECH ===== -->
+      <!-- ===== CRIME / NATIONAL ===== -->
       <section class="news-section mb-5" id="section-tech">
         <div class="section-head d-flex justify-content-between align-items-center mb-3">
-          <h2 class="section-title"><span class="section-dot tech-dot"></span><span>প্রযুক্তি</span></h2>
+          <h2 class="section-title"><span class="section-dot tech-dot"></span><span>আইন ও অপরাধ</span></h2>
           <a href="#" class="see-all">সব দেখুন <i class="bi bi-chevron-right"></i></a>
         </div>
         <div class="row g-3">
-          <div class="col-md-4"><div class="news-card lead-card"><div class="news-card-img"><img src="https://picsum.photos/seed/tech1/500/320" alt="প্রযুক্তি" /><span class="story-cat-badge tech-badge">প্রযুক্তি</span></div><div class="news-card-body"><h3>বাংলাদেশে ৫জি নেটওয়ার্ক পরীক্ষামূলক চালু, দেশজুড়ে বিস্তার হবে ২০২৭ সালে</h3><div class="news-card-meta"><span><i class="bi bi-clock"></i> ৩ ঘণ্টা আগে</span><a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a></div></div></div></div>
-          <div class="col-md-4"><div class="news-card lead-card"><div class="news-card-img"><img src="https://picsum.photos/seed/tech2/500/320" alt="প্রযুক্তি" /></div><div class="news-card-body"><h3>দেশীয় স্টার্টআপ বিদেশে বিনিয়োগ পেল ১০ মিলিয়ন ডলার</h3><div class="news-card-meta"><span><i class="bi bi-clock"></i> ৫ ঘণ্টা আগে</span><a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a></div></div></div></div>
-          <div class="col-md-4"><div class="news-card lead-card"><div class="news-card-img"><img src="https://picsum.photos/seed/tech3/500/320" alt="প্রযুক্তি" /></div><div class="news-card-body"><h3>এআই ব্যবহারে এগিয়ে বাংলাদেশের তরুণ উদ্যোক্তারা</h3><div class="news-card-meta"><span><i class="bi bi-clock"></i> ৬ ঘণ্টা আগে</span><a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a></div></div></div></div>
+          <div class="col-md-4">
+            <div class="news-card lead-card">
+              <div class="news-card-img">
+                <img src="https://picsum.photos/seed/cr11/500/320" alt="অপরাধ" />
+                <span class="story-cat-badge tech-badge">অপরাধ</span>
+              </div>
+              <div class="news-card-body">
+                <h3>সাতক্ষীরা সীমান্তে মাদকাসক্ত ১২ লাখ টাকার মালামাল জব্দ করেছে বিজিবি</h3>
+                <div class="news-card-meta">
+                  <span><i class="bi bi-person"></i> DNBD MEDIA • মার্চ ০৭</span>
+                  <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="news-card lead-card">
+              <div class="news-card-img">
+                <img src="https://picsum.photos/seed/cr12/500/320" alt="অপরাধ" />
+              </div>
+              <div class="news-card-body">
+                <h3>বারহাটায় ঘরে মিলল শিশুর ঝুলন্ত মরদেহ, ধর্ষণের পর হত্যার সন্দেহ</h3>
+                <div class="news-card-meta">
+                  <span><i class="bi bi-person"></i> Editor • মার্চ ০৭</span>
+                  <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="news-card lead-card">
+              <div class="news-card-img">
+                <img src="https://picsum.photos/seed/cr13/500/320" alt="অপরাধ" />
+              </div>
+              <div class="news-card-body">
+                <h3>বাংলাদেশে ১০৫টি চোরাই বাইসাইকেলসহ চারচক্রের ৬ জন গ্রেফতার</h3>
+                <div class="news-card-meta">
+                  <span><i class="bi bi-person"></i> DNBD MEDIA • ফেব্রুয়ারি ১৫</span>
+                  <a href="#" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -589,7 +589,7 @@
               <div class="en-flag-icon">EN</div>
               <div>
                 <h2 class="en-section-title">English News</h2>
-                <p class="en-section-sub">Latest news in English from Bangladesh & World</p>
+                <p class="en-section-sub">Latest news in English from Bangladesh &amp; World</p>
               </div>
             </div>
             <a href="#" class="see-all-en">View All <i class="bi bi-chevron-right"></i></a>
@@ -599,23 +599,23 @@
           <div class="col-lg-5">
             <div class="en-lead-card">
               <div class="en-lead-img">
-                <img src="https://picsum.photos/seed/en1/700/420" alt="English News" />
+                <img src="https://picsum.photos/seed/en11/700/420" alt="English News" />
                 <span class="en-cat-badge">National</span>
               </div>
               <div class="en-lead-body">
-                <span class="en-meta">March 7, 2026 • 1 hour ago</span>
-                <h2 class="en-headline">Bangladesh Economy Hits Record Growth of 7.5% Amid Regional Uncertainties</h2>
-                <p class="en-excerpt">Bangladesh's economy has shown remarkable resilience, achieving a record GDP growth rate of 7.5% this fiscal year, surpassing regional peers and international forecasts.</p>
+                <span class="en-meta">February 18, 2026 • DNBD MEDIA</span>
+                <h2 class="en-headline">Tareq Rahman Takes Oath as Bangladesh's New Prime Minister</h2>
+                <p class="en-excerpt">Tareq Rahman has been sworn in as Bangladesh's new Prime Minister, marking a significant political transition. President Shahabuddin administered the oath at Bangabhaban.</p>
                 <a href="#" class="en-read-btn">Read More <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div>
           <div class="col-lg-7">
             <div class="row g-3">
-              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en2/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag politics">Politics</span><h4>New Cabinet Formation Underway, Swearing-in Ceremony Set for Saturday</h4><span class="en-time">2 hours ago</span></div></div></div>
-              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en3/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag sports">Sports</span><h4>Bangladesh Whitewashes West Indies in Historic ODI Series Victory</h4><span class="en-time">3 hours ago</span></div></div></div>
-              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en4/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag tech">Technology</span><h4>5G Network Trial Begins in Dhaka, Nationwide Rollout by 2027</h4><span class="en-time">4 hours ago</span></div></div></div>
-              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en5/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag intl">International</span><h4>UN General Assembly Adopts Bangladesh's Climate Resilience Resolution</h4><span class="en-time">5 hours ago</span></div></div></div>
+              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en12/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag politics">Politics</span><h4>8 Advisors Assigned to New Government Portfolios</h4><span class="en-time">Editor • Feb 21, 2026</span></div></div></div>
+              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en13/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag intl">International</span><h4>Iran Pledges No More Strikes on Neighboring Countries</h4><span class="en-time">Editor • Mar 7, 2026</span></div></div></div>
+              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en14/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag intl">International</span><h4>Israeli Airstrikes on Lebanon Kill 31 People</h4><span class="en-time">Editor • Mar 2, 2026</span></div></div></div>
+              <div class="col-sm-6"><div class="en-card"><img src="https://picsum.photos/seed/en15/400/240" alt="English News" /><div class="en-card-body"><span class="en-tag politics">National</span><h4>BGB Seizes Drugs Worth 1.2 Million Taka at Satkhira Border</h4><span class="en-time">DNBD MEDIA • Mar 7, 2026</span></div></div></div>
             </div>
           </div>
         </div>
@@ -628,10 +628,10 @@
           <a href="#" class="see-all">সব দেখুন <i class="bi bi-chevron-right"></i></a>
         </div>
         <div class="row g-2">
-          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal1/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>বসন্তের আগমনে ফুলের সমারোহ</p></div></div>
-          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal2/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>জাতীয় সংসদ ভবনের নতুন আলোকসজ্জা</p></div></div>
-          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal3/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>পদ্মা সেতুতে রাতের অসাধারণ দৃশ্য</p></div></div>
-          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal4/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>সুন্দরবনের বাঘ দেখা গেছে নতুন এলাকায়</p></div></div>
+          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal11/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>ফুলবাড়ীতে যুব উদ্যোক্তাদের রমজান উদযাপন</p></div></div>
+          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal12/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>একুশের শহর ঝিনাইদহে ভাষা শহীদদের প্রতি শ্রদ্ধা</p></div></div>
+          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal13/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>কালিয়াকৈর পিঠা উৎসব মেলার আনন্দময় মুহূর্ত</p></div></div>
+          <div class="col-6 col-md-3"><div class="gallery-item"><img src="https://picsum.photos/seed/gal14/400/300" alt="গ্যালারি" /><div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div><p>সুন্দরবন উপকূলে জলবায়ু পরিবর্তনের প্রভাব</p></div></div>
         </div>
       </section>
 
@@ -664,60 +664,78 @@
   <footer class="site-footer">
     <div class="footer-top">
       <div class="container-fluid px-3 px-lg-5">
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-brand">
-              <div class="logo-wrap mb-3">
-                <div class="logo-icon">DN</div>
-                <div class="logo-text"><span class="logo-main footer-logo-main">Daily News</span><span class="logo-sub footer-logo-sub">দেশ ও মানুষের কণ্ঠস্বর</span></div>
-              </div>
-              <p>Daily News BD বাংলাদেশের একটি শীর্ষস্থানীয় অনলাইন সংবাদমাধ্যম। সত্য, নিরপেক্ষ ও দায়িত্বশীল সাংবাদিকতার মাধ্যমে আমরা দেশ ও বিশ্বের সর্বশেষ খবর পরিবেশন করি।</p>
-              <div class="footer-socials d-flex gap-2 mt-3">
-                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-              </div>
-            </div>
+
+        <!-- About row -->
+        <div class="footer-about-row">
+          <img src="logo.png" alt="Daily News BD" class="footer-logo-img" />
+          <div class="footer-about-text">
+            <p class="footer-about-title">ABOUT US</p>
+            <p>The Daily News BD Online is a promising online news portal of Bangladesh. We collect news from all over the world using actual sources. So you will find the true news here. Be with us, be with truth.</p>
           </div>
-          <div class="col-lg-2 col-md-3 col-6">
-            <h4 class="footer-heading">বিভাগ</h4>
+          <div class="footer-about-social">
+            <a href="https://www.facebook.com/DailyNewsBDonline" class="footer-social-pill" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-pill" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/@DailyNewsBDonline" class="footer-social-pill" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="row g-4 pt-2">
+
+          <!-- Contact Details -->
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">CONTACT DETAILS</h4>
+            <p class="footer-contact-text">Bangladesh Office : 2/2, R. K. Mission Road, Motijheel, Dhaka-1203.<br />Mail : dailynewsbdonline@gmail.com, dnbdmedia@gmail.com<br />Mobile : 01731-828236, 01919-667217, 01568-393401, 01913-719924, 01715-818695, 01714-370017</p>
+            <h4 class="footer-col-heading mt-3">USA OFFICE</h4>
+            <p class="footer-contact-text">109-17 205th St, Saint Albans, NY 11412. Phone : +1 (718) 864-3245</p>
+          </div>
+
+          <!-- Offices -->
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">LONDON OFFICE</h4>
+            <p class="footer-contact-text">8/A Prime Meridian Walk. Canary Wharf, London.<br />Phone : +44 7597 597282</p>
+            <h4 class="footer-col-heading mt-3">UAE OFFICE</h4>
+            <p class="footer-contact-text">Riyadh – Al-Mursalat, District – King, Abdullah Road-12461.</p>
+          </div>
+
+          <!-- Editors -->
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">EDITOR : MD SAIDUL ISLAM</h4>
+            <p class="footer-contact-text">Chief Editor : SM. Miraz Hossain Tipu</p>
+            <h4 class="footer-col-heading mt-3">EXECUTIVE EDITOR : MD LUTFOR RAHMAN (KHAJA SHAH)</h4>
+            <p class="footer-contact-text">Mobile : +88 01715-818695</p>
+            <h4 class="footer-col-heading mt-3">DEPUTY EDITOR : FATEMA AKTER RANI</h4>
+            <p class="footer-contact-text">Mobile : +88 01712-898043</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">বিভাগ</h4>
             <ul class="footer-links">
-              <li><a href="#">জাতীয়</a></li><li><a href="#">রাজনীতি</a></li><li><a href="#">অর্থনীতি</a></li>
-              <li><a href="#">আন্তর্জাতিক</a></li><li><a href="#">খেলাধুলা</a></li><li><a href="#">বিনোদন</a></li><li><a href="#">প্রযুক্তি</a></li>
+              <li><a href="#">জাতীয়</a></li>
+              <li><a href="#">রাজনীতি</a></li>
+              <li><a href="#">বাণিজ্য</a></li>
+              <li><a href="#">আন্তর্জাতিক</a></li>
+              <li><a href="#">খেলাধুলা</a></li>
+              <li><a href="#">বিনোদন</a></li>
+              <li><a href="#">তথ্যপ্রযুক্তি</a></li>
+              <li><a href="#">স্বাস্থ্য</a></li>
             </ul>
           </div>
-          <div class="col-lg-2 col-md-3 col-6">
-            <h4 class="footer-heading">আরও</h4>
-            <ul class="footer-links">
-              <li><a href="#">লাইফস্টাইল</a></li><li><a href="#">শিক্ষা</a></li><li><a href="#">স্বাস্থ্য</a></li>
-              <li><a href="#">ধর্ম</a></li><li><a href="#">ভ্রমণ</a></li><li><a href="#">মতামত</a></li><li><a href="#">চাকরি</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <h4 class="footer-heading">যোগাযোগ</h4>
-            <ul class="footer-contact">
-              <li><i class="bi bi-geo-alt-fill"></i> ৪৫, কারওয়ান বাজার, ঢাকা-১২১৫</li>
-              <li><i class="bi bi-telephone-fill"></i> +৮৮ ০১৭XX-XXXXXX</li>
-              <li><i class="bi bi-envelope-fill"></i> news@dailynewsbd.online</li>
-              <li><i class="bi bi-globe"></i> www.dailynewsbd.online</li>
-            </ul>
-            <h4 class="footer-heading mt-3">সম্পাদক</h4>
-            <p class="footer-editor">মোহাম্মদ রহিমউদ্দিন</p>
-            <p class="footer-editor-title">প্রধান সম্পাদক ও প্রকাশক</p>
-          </div>
+
         </div>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container-fluid px-3 px-lg-5">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-          <p>&copy; ২০২৬ Daily News BD. সর্বস্বত্ব সংরক্ষিত।</p>
+          <p>Design by <a href="#" class="footer-credit">Blogging</a> | Distributed by <a href="#" class="footer-credit">Gooyaabi</a></p>
           <div class="d-flex gap-3 flex-wrap">
-            <a href="#">গোপনীয়তা নীতি</a>
-            <a href="#">ব্যবহারের শর্ত</a>
-            <a href="#">বিজ্ঞাপন</a>
+            <a href="index.html">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="#">RTL Version</a>
           </div>
         </div>
       </div>
@@ -729,7 +747,6 @@
     <i class="bi bi-chevron-up"></i>
   </button>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="main.js"></script>
 </body>

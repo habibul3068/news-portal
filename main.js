@@ -121,7 +121,7 @@
 
 
   /* =========================================================
-     4. STICKY NAVBAR — shrink on scroll + show mini logo
+     4. STICKY HEADER — shrink logo on scroll
   ========================================================= */
   const mainNav = document.getElementById('mainNav');
 
@@ -141,17 +141,19 @@
   /* =========================================================
      5. NAV FLOATING SEARCH TOGGLE
   ========================================================= */
-  const navSearchToggle = document.getElementById('navSearchToggle');
+  const searchToggles = document.querySelectorAll('#navSearchToggle, #navSearchToggleMobile');
   const floatingSearch = document.getElementById('floatingSearch');
   const floatingSearchInput = document.getElementById('floatingSearchInput');
   const floatingSearchClose = document.getElementById('floatingSearchClose');
-
-  if (navSearchToggle && floatingSearch) {
-    navSearchToggle.addEventListener('click', function () {
-      floatingSearch.classList.toggle('active');
-      if (floatingSearch.classList.contains('active') && floatingSearchInput) {
-        floatingSearchInput.focus();
-      }
+  
+  if (searchToggles.length && floatingSearch) {
+    searchToggles.forEach(toggle => {
+      toggle.addEventListener('click', function () {
+        floatingSearch.classList.toggle('active');
+        if (floatingSearch.classList.contains('active') && floatingSearchInput) {
+          floatingSearchInput.focus();
+        }
+      });
     });
   }
 
