@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান | Daily News BD</title>
+  <meta name="description" content="নতুন মন্ত্রিসভা গঠনের পর দেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান।" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== ARTICLE DETAIL PAGE STYLES ===== */
+
+    /* Article Hero */
+    .article-hero {
+      position: relative;
+      width: 100%;
+      max-height: 520px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .article-hero img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+    }
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 50%, transparent 100%);
+    }
+    .article-hero-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 24px 16px;
+    }
+    .article-hero-caption .story-cat-badge {
+      position: static;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .article-hero-title {
+      font-family: var(--font-bn);
+      font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      margin: 0;
+      max-width: 860px;
+    }
+    @media (max-width: 767px) {
+      .article-hero img { height: 240px; }
+      .article-hero { max-height: 240px; }
+    }
+
+    /* Breadcrumb */
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      padding: 14px 0 10px;
+      flex-wrap: wrap;
+    }
+    .article-breadcrumb a { color: var(--text-muted); transition: color var(--transition); }
+    .article-breadcrumb a:hover { color: var(--crimson); }
+    .article-breadcrumb i { font-size: 0.6rem; }
+
+    /* Article Meta Bar */
+    .article-meta-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      padding: 14px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 3px solid var(--crimson);
+      margin-bottom: 28px;
+    }
+    .article-author-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .article-author-block img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--crimson);
+    }
+    .author-info strong {
+      font-family: var(--font-bn);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: block;
+    }
+    .author-info span {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      color: var(--crimson);
+    }
+    .article-meta-items {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .article-meta-items span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .article-meta-items i { color: var(--crimson); }
+
+    /* Share Buttons */
+    .share-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-left: auto;
+    }
+    .share-label {
+      font-family: var(--font-bn);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: opacity var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+    .share-btn:hover { opacity: 0.88; color: #fff; transform: translateY(-1px); }
+    .share-btn.fb-btn { background: #1877f2; }
+    .share-btn.tw-btn { background: #1da1f2; }
+    .share-btn.wa-btn { background: #25d366; }
+    .share-btn.copy-btn { background: var(--navy); }
+
+    /* Article Body Typography */
+    .article-body {
+      font-family: var(--font-bn);
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      line-height: 1.9;
+    }
+    .article-lead {
+      font-family: var(--font-bn);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      border-left: 4px solid var(--crimson);
+      padding: 12px 20px;
+      background: rgba(193, 18, 31, 0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 24px;
+    }
+    [data-theme="dark"] .article-lead { background: rgba(193,18,31,0.08); }
+    .article-body p {
+      margin-bottom: 20px;
+    }
+    .article-body h2 {
+      font-family: var(--font-bn);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 32px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+    .article-body h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--crimson);
+    }
+    .article-body h3 {
+      font-family: var(--font-bn);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 24px 0 12px;
+    }
+    .article-body blockquote {
+      margin: 28px 0;
+      padding: 20px 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    .article-body blockquote p {
+      font-family: var(--font-bn);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      font-style: italic;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .article-body blockquote cite {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-top: 10px;
+      font-style: normal;
+    }
+    .article-body .inline-img {
+      margin: 24px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .article-body .inline-img img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .article-body .inline-img figcaption {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      padding: 8px 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+    .article-body ul { list-style: disc; }
+    .article-body ol { list-style: decimal; }
+    .article-body li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(193,18,31,0.06), rgba(193,18,31,0.02));
+      border: 1px solid rgba(193,18,31,0.2);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin: 24px 0;
+    }
+    .highlight-box strong {
+      display: block;
+      font-family: var(--font-bn);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--crimson);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    [data-theme="dark"] .highlight-box {
+      background: rgba(193,18,31,0.1);
+      border-color: rgba(193,18,31,0.3);
+    }
+
+    /* Tags section */
+    .article-tags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 28px 0;
+    }
+    .tags-label {
+      font-family: var(--font-bn);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .article-tag-pill {
+      font-family: var(--font-bn);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .article-tag-pill:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      color: #fff;
+    }
+
+    /* Bottom Share Bar */
+    .article-bottom-share {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .abs-left {
+      font-family: var(--font-bn);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* Article Sidebar */
+    .detail-sidebar-widget {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .dsw-header {
+      padding: 12px 16px;
+      background: var(--navy);
+      border-bottom: 2px solid var(--crimson);
+    }
+    .dsw-header h3 {
+      font-family: var(--font-bn);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .dsw-header h3 i { color: var(--gold); }
+
+    /* Sidebar news mini list */
+    .detail-news-list li {
+      display: flex;
+      gap: 10px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-light);
+      align-items: flex-start;
+    }
+    .detail-news-list li:last-child { border-bottom: none; }
+    .dnl-num {
+      font-family: var(--font-en);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--crimson);
+      opacity: 0.5;
+      flex-shrink: 0;
+      width: 24px;
+      line-height: 1.3;
+    }
+    .dnl-body h5 {
+      font-family: var(--font-bn);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.45;
+      margin-bottom: 3px;
+    }
+    .dnl-body h5 a:hover { color: var(--crimson); }
+
+    /* Related Articles */
+    .related-section {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 3px solid var(--crimson);
+    }
+    .related-section-title {
+      font-family: var(--font-bn);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .related-section-title i { color: var(--crimson); }
+    .related-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: box-shadow var(--transition), transform var(--transition);
+      height: 100%;
+    }
+    .related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .related-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .related-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .related-card-body { padding: 14px 16px; }
+    .related-card-body h4 {
+      font-family: var(--font-bn);
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .related-card-body h4 a:hover { color: var(--crimson); }
+    .related-card-body .news-card-meta { margin-top: auto; }
+
+    /* Sidebar — no sticky, scrolls naturally with the page */
+    .detail-sticky-sidebar { display: flex; flex-direction: column; gap: 0; }
+
+    /* Print/FontSize controls */
+    .article-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+    .ctrl-btn {
+      width: 32px;
+      height: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all var(--transition);
+    }
+    .ctrl-btn:hover { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+
+    /* Progress bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--crimson);
+      z-index: 9999;
+      transition: width 0.1s ease;
+      width: 0%;
+    }
+
+    /* Ad sidebar */
+    .detail-ad {
+      background: var(--card-bg);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-muted);
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      margin-bottom: 24px;
+    }
+    .detail-ad i { font-size: 2rem; opacity: 0.3; }
+
+    /* Comments section */
+    .comments-section {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .comments-title {
+      font-family: var(--font-bn);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comment-count {
+      background: var(--crimson);
+      color: #fff;
+      font-size: 0.75rem;
+      font-family: var(--font-ui);
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .comment-input-area {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .comment-input-area textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-family: var(--font-bn);
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      resize: vertical;
+      min-height: 90px;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .comment-input-area textarea:focus { border-color: var(--crimson); }
+    .comment-input-area textarea::placeholder { color: var(--text-muted); }
+    .submit-comment-btn {
+      background: var(--crimson);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-bn);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background var(--transition);
+    }
+    .submit-comment-btn:hover { background: var(--crimson-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- ===== UTILITY BAR ===== -->
+  <div class="utility-bar">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-3">
+          <span class="utility-date" id="currentDate"></span>
+          <span class="utility-divider d-none d-md-inline">|</span>
+          <span class="utility-time d-none d-md-inline" id="currentTime"></span>
+          <span class="utility-divider d-none d-md-inline">|</span>
+          <span class="utility-weather d-none d-md-inline"><i class="bi bi-cloud-sun"></i> ঢাকা ৩২°C</span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="social-icons d-none d-sm-flex gap-2">
+            <a href="https://www.facebook.com/DailyNewsBDonline" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@DailyNewsBDonline" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+          </button>
+          <a href="#" class="en-btn">English</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER + NAVBAR ===== -->
+  <header class="site-header sticky-top" id="mainNav">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="header-inner d-flex align-items-center">
+        <a href="index.html" class="logo-link">
+          <img src="logo_main.png" alt="Daily News BD" class="site-logo-img" />
+        </a>
+        <nav class="main-nav navbar navbar-expand-lg flex-grow-1 justify-content-center">
+          <div class="mobile-search-wrap d-lg-none ms-auto me-2">
+            <button class="nav-search-mini" id="navSearchToggleMobile"><i class="bi bi-search"></i></button>
+          </div>
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavMenu" aria-controls="mainNavMenu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="mainNavMenu">
+            <ul class="navbar-nav align-items-lg-center">
+              <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=জাতীয়">জাতীয়</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=রাজনীতি">রাজনীতি</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বাণিজ্য">বাণিজ্য</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বাংলাদেশ">বাংলাদেশ</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=প্রবাস">প্রবাস</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বিশ্ব">বিশ্ব সংবাদ</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বিনোদন">বিনোদন</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=খেলাধুলা">খেলাধুলা</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">অন্যান্য</a>
+                <ul class="dropdown-menu custom-dropdown">
+                  <li><a class="dropdown-item" href="#">তথ্যপ্রযুক্তি</a></li>
+                  <li><a class="dropdown-item" href="#">স্বাস্থ্য</a></li>
+                  <li><a class="dropdown-item" href="#">শিক্ষা</a></li>
+                  <li><a class="dropdown-item" href="#">ধর্ম</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">মতামত</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="nav-right-pills d-flex align-items-center gap-2 ms-lg-3">
+              <a href="#" class="nav-en-pill">EN</a>
+              <button class="nav-search-mini" id="navSearchToggle"><i class="bi bi-search"></i></button>
+            </div>
+          </div>
+        </nav>
+        <a href="#" class="subscribe-btn d-none d-lg-flex"><i class="bi bi-bell-fill me-1"></i> সাবস্ক্রাইব</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="floating-search" id="floatingSearch">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex gap-2">
+        <input type="text" class="form-control" placeholder="খবর খুঁজুন..." id="floatingSearchInput" />
+        <button class="btn btn-danger" id="floatingSearchClose"><i class="bi bi-x-lg"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BREAKING BAR ===== -->
+  <div class="breaking-bar">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex align-items-center">
+        <div class="breaking-label"><span>সর্বশেষ</span></div>
+        <div class="ticker-wrap">
+          <div class="ticker-track" id="tickerTrack">
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> <a href="#">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</a></span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> <a href="#">প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন সম্পন্ন</a></span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> <a href="#">নারায়ণগঞ্জে বিপুল পরিমাণ মাদকসহ ১৫ জন গ্রেফতার</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ARTICLE HERO IMAGE ===== -->
+  <div class="article-hero">
+    <img src="https://picsum.photos/seed/articlehero/1400/520" alt="বাংলাদেশের নতুন প্রধানমন্ত্রী" />
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-caption container-fluid px-3 px-lg-5">
+      <span class="story-cat-badge">রাজনীতি</span>
+      <h1 class="article-hero-title">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান — দেশজুড়ে উৎসবের আমেজ</h1>
+    </div>
+  </div>
+
+  <!-- ===== MAIN ARTICLE CONTENT ===== -->
+  <main class="main-content">
+    <div class="container-fluid px-3 px-lg-5">
+
+      <!-- Breadcrumb -->
+      <nav class="article-breadcrumb" aria-label="breadcrumb">
+        <a href="index.html"><i class="bi bi-house-fill"></i> হোম</a>
+        <i class="bi bi-chevron-right"></i>
+        <a href="news-category.html?cat=রাজনীতি">রাজনীতি</a>
+        <i class="bi bi-chevron-right"></i>
+        <span>তারেক রহমানের শপথ</span>
+      </nav>
+
+      <div class="row g-4">
+
+        <!-- ===== ARTICLE MAIN COLUMN ===== -->
+        <div class="col-lg-8">
+
+          <!-- Article Meta Bar -->
+          <div class="article-meta-bar">
+            <div class="article-author-block">
+              <img src="https://picsum.photos/seed/auth11/80/80" alt="লেখক" />
+              <div class="author-info">
+                <strong>এস এম মিরাজ হোসেন টিপু</strong>
+                <span>প্রধান সম্পাদক</span>
+              </div>
+            </div>
+            <div class="article-meta-items">
+              <span><i class="bi bi-calendar3"></i> ফেব্রুয়ারি ১৮, ২০২৬</span>
+              <span><i class="bi bi-clock"></i> বিকাল ৪:৩০</span>
+              <span><i class="bi bi-eye"></i> ১২,৪৫৮</span>
+              <span><i class="bi bi-chat"></i> ৮৬টি মন্তব্য</span>
+            </div>
+            <div class="article-controls d-none d-md-flex">
+              <button class="ctrl-btn" id="fontIncrease" title="ফন্ট বড় করুন"><i class="bi bi-type-h1"></i></button>
+              <button class="ctrl-btn" id="fontDecrease" title="ফন্ট ছোট করুন"><i class="bi bi-type"></i></button>
+              <button class="ctrl-btn" onclick="window.print()" title="প্রিন্ট করুন"><i class="bi bi-printer"></i></button>
+            </div>
+          </div>
+
+          <!-- Top Share Bar -->
+          <div class="d-flex align-items-center flex-wrap gap-2 mb-4">
+            <span class="share-label">শেয়ার করুন:</span>
+            <div class="share-bar">
+              <a href="#" class="share-btn fb-btn"><i class="bi bi-facebook"></i> ফেসবুক</a>
+              <a href="#" class="share-btn tw-btn"><i class="bi bi-twitter-x"></i> টুইটার</a>
+              <a href="#" class="share-btn wa-btn"><i class="bi bi-whatsapp"></i> হোয়াটসঅ্যাপ</a>
+              <button class="share-btn copy-btn" id="copyLinkBtn"><i class="bi bi-link-45deg"></i> লিংক কপি</button>
+            </div>
+          </div>
+
+          <!-- Article Body -->
+          <article class="article-body" id="articleBody">
+
+            <p class="article-lead">
+              নতুন মন্ত্রিসভা গঠনের পর দেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান। সোমবার বিকেলে বঙ্গভবনে রাষ্ট্রপতি মো. সাহাবুদ্দিনের কাছে শপথ গ্রহণ করেন তিনি। এটি তিন বছরে তৃতীয় সরকারের শপথ অনুষ্ঠান।
+            </p>
+
+            <p>
+              বাংলাদেশের রাজনৈতিক ইতিহাসে এটি একটি স্মরণীয় ঘটনা। দীর্ঘ রাজনৈতিক অস্থিরতার পর দেশ একটি স্থিতিশীল সরকারের দিকে এগিয়ে যাচ্ছে বলে মনে করছেন রাজনৈতিক বিশ্লেষকরা। শপথ অনুষ্ঠানে দেশি-বিদেশি কূটনীতিক ও বিশিষ্ট ব্যক্তিরা উপস্থিত ছিলেন।
+            </p>
+
+            <figure class="inline-img">
+              <img src="https://picsum.photos/seed/artinline1/800/450" alt="শপথ গ্রহণ অনুষ্ঠান" />
+              <figcaption>বঙ্গভবনে শপথ গ্রহণ অনুষ্ঠানে তারেক রহমান। ছবি: DNBD MEDIA</figcaption>
+            </figure>
+
+            <h2>শপথ গ্রহণের বিস্তারিত</h2>
+
+            <p>
+              সোমবার বিকেল ৪টায় বঙ্গভবনের দরবার হলে শপথ গ্রহণ অনুষ্ঠান শুরু হয়। প্রথমে প্রধানমন্ত্রী, তারপর মন্ত্রিপরিষদের অন্যান্য সদস্যরা শপথ নেন। রাষ্ট্রপতি মো. সাহাবুদ্দিন শপথবাক্য পাঠ করান।
+            </p>
+
+            <div class="highlight-box">
+              <strong><i class="bi bi-info-circle-fill"></i> গুরুত্বপূর্ণ তথ্য</strong>
+              <ul>
+                <li>শপথ গ্রহণ করলেন: তারেক রহমান (প্রধানমন্ত্রী)</li>
+                <li>শপথ গ্রহণের তারিখ: ১৮ ফেব্রুয়ারি, ২০২৬</li>
+                <li>মন্ত্রিসভার মোট সদস্য: ৪৬ জন</li>
+                <li>রাষ্ট্রপতির নাম: মো. সাহাবুদ্দিন</li>
+              </ul>
+            </div>
+
+            <p>
+              নতুন সরকারের অগ্রাধিকার হিসেবে অর্থনৈতিক উন্নয়ন, দুর্নীতিমুক্ত প্রশাসন ও আইনের শাসন প্রতিষ্ঠাকে গুরুত্ব দেওয়া হয়েছে বলে জানা গেছে। নতুন প্রধানমন্ত্রী তার বক্তব্যে বলেন:
+            </p>
+
+            <blockquote>
+              <p>"আমরা একটি সুন্দর, সমৃদ্ধ ও ন্যায়বিচারের বাংলাদেশ গড়তে প্রতিশ্রুতিবদ্ধ। প্রতিটি নাগরিকের অধিকার নিশ্চিত করতে এই সরকার কাজ করবে।"</p>
+              <cite>— তারেক রহমান, প্রধানমন্ত্রী</cite>
+            </blockquote>
+
+            <h2>মন্ত্রিসভার সদস্যরা</h2>
+
+            <p>
+              নতুন মন্ত্রিসভায় মোট ৪৬ জন সদস্য রয়েছেন। তাদের মধ্যে ২৮ জন পূর্ণ মন্ত্রী, ১২ জন প্রতিমন্ত্রী এবং ৬ জন উপমন্ত্রী। বিভিন্ন রাজনৈতিক দল ও নির্দলীয় বিশেষজ্ঞদের নিয়ে এই মন্ত্রিসভা গঠিত হয়েছে।
+            </p>
+
+            <p>
+              অর্থ মন্ত্রণালয়ের দায়িত্ব পেয়েছেন একজন অভিজ্ঞ অর্থনীতিবিদ। পররাষ্ট্র মন্ত্রণালয়ে একজন সাবেক কূটনীতিক নিয়োগ পেয়েছেন। এছাড়া শিক্ষা ও স্বাস্থ্য মন্ত্রণালয়েও নতুন মুখ এসেছে।
+            </p>
+
+            <figure class="inline-img">
+              <img src="https://picsum.photos/seed/artinline2/800/450" alt="মন্ত্রিসভার সদস্যরা" />
+              <figcaption>নতুন মন্ত্রিসভার সদস্যরা বঙ্গভবনে। ছবি: DNBD MEDIA</figcaption>
+            </figure>
+
+            <h2>দেশবাসীর প্রতিক্রিয়া</h2>
+
+            <p>
+              নতুন সরকার গঠনের খবরে সারাদেশে ইতিবাচক প্রতিক্রিয়া দেখা গেছে। রাজধানী ঢাকাসহ বিভিন্ন জেলায় সমর্থকরা উৎসব পালন করেছেন। সাধারণ মানুষ নতুন সরকারের কাছ থেকে দ্রব্যমূল্য নিয়ন্ত্রণ ও কর্মসংস্থান সৃষ্টির প্রত্যাশা রাখছেন।
+            </p>
+
+            <p>
+              রাজনৈতিক বিশ্লেষক ড. আনিসুল হক বলেন, "এই সরকারের সামনে অনেক চ্যালেঞ্জ রয়েছে। তবে যদি তারা সংলাপ ও সমঝোতার পথে হাঁটেন, তবে দেশ এগিয়ে যাবে।"
+            </p>
+
+            <h3>প্রধান চ্যালেঞ্জসমূহ</h3>
+
+            <ul>
+              <li>মূল্যস্ফীতি নিয়ন্ত্রণ ও নিত্যপ্রয়োজনীয় দ্রব্যের দাম স্থিতিশীল রাখা</li>
+              <li>কর্মসংস্থান বৃদ্ধি ও বেকারত্ব হ্রাস করা</li>
+              <li>দুর্নীতি দমন ও সুশাসন প্রতিষ্ঠা</li>
+              <li>বৈদেশিক বিনিয়োগ আকৃষ্ট করা</li>
+              <li>রাজনৈতিক স্থিতিশীলতা বজায় রাখা</li>
+            </ul>
+
+            <p>
+              আন্তর্জাতিক সম্প্রদায় নতুন সরকারকে স্বাগত জানিয়েছে। যুক্তরাষ্ট্র, যুক্তরাজ্য, ভারত ও চীন ইতিমধ্যে অভিনন্দন বার্তা পাঠিয়েছে। জাতিসংঘও এই গণতান্ত্রিক উত্তরণকে ইতিবাচকভাবে মূল্যায়ন করেছে।
+            </p>
+
+          </article>
+
+          <!-- Tags -->
+          <div class="article-tags">
+            <span class="tags-label"><i class="bi bi-tags-fill me-1"></i> ট্যাগ:</span>
+            <a href="#" class="article-tag-pill">তারেক রহমান</a>
+            <a href="#" class="article-tag-pill">প্রধানমন্ত্রী</a>
+            <a href="#" class="article-tag-pill">শপথ গ্রহণ</a>
+            <a href="#" class="article-tag-pill">মন্ত্রিসভা</a>
+            <a href="#" class="article-tag-pill">বাংলাদেশ</a>
+            <a href="#" class="article-tag-pill">রাজনীতি</a>
+            <a href="#" class="article-tag-pill">বঙ্গভবন</a>
+          </div>
+
+          <!-- Bottom Share Bar -->
+          <div class="article-bottom-share">
+            <div class="abs-left"><i class="bi bi-share-fill me-2" style="color:var(--crimson)"></i>এই খবরটি শেয়ার করুন</div>
+            <div class="d-flex gap-2 flex-wrap">
+              <a href="#" class="share-btn fb-btn"><i class="bi bi-facebook"></i> ফেসবুক</a>
+              <a href="#" class="share-btn tw-btn"><i class="bi bi-twitter-x"></i> টুইটার</a>
+              <a href="#" class="share-btn wa-btn"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+              <button class="share-btn copy-btn" id="copyLinkBtn2"><i class="bi bi-link-45deg"></i> কপি</button>
+            </div>
+          </div>
+
+          <!-- Comments Section -->
+          <div class="comments-section" id="comments">
+            <h3 class="comments-title">
+              <i class="bi bi-chat-dots-fill" style="color:var(--crimson)"></i>
+              মন্তব্য <span class="comment-count">৮৬</span>
+            </h3>
+            <div class="comment-input-area">
+              <textarea placeholder="আপনার মন্তব্য লিখুন..."></textarea>
+              <div class="d-flex gap-2 mt-2 flex-wrap">
+                <input type="text" class="form-control" placeholder="আপনার নাম" style="max-width:200px;font-family:var(--font-bn);font-size:0.85rem;" />
+                <button class="submit-comment-btn">মন্তব্য করুন <i class="bi bi-send"></i></button>
+              </div>
+            </div>
+            <!-- Sample Comments -->
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex gap-3" style="padding:14px 0;border-bottom:1px solid var(--border-light)">
+                <img src="https://picsum.photos/seed/com1/48/48" alt="ব্যবহারকারী" style="width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+                <div>
+                  <strong style="font-family:var(--font-bn);font-size:0.88rem;color:var(--text-primary);">মোহাম্মদ আলি</strong>
+                  <span style="font-family:var(--font-ui);font-size:0.72rem;color:var(--text-muted);margin-left:8px;">২ ঘণ্টা আগে</span>
+                  <p style="font-family:var(--font-bn);font-size:0.88rem;color:var(--text-secondary);margin:6px 0 0;line-height:1.6;">নতুন সরকারের কাছে দেশবাসীর অনেক প্রত্যাশা। আশা করি তারা সেই প্রত্যাশা পূরণ করতে পারবে।</p>
+                </div>
+              </div>
+              <div class="d-flex gap-3" style="padding:14px 0;border-bottom:1px solid var(--border-light)">
+                <img src="https://picsum.photos/seed/com2/48/48" alt="ব্যবহারকারী" style="width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+                <div>
+                  <strong style="font-family:var(--font-bn);font-size:0.88rem;color:var(--text-primary);">রাহেলা বেগম</strong>
+                  <span style="font-family:var(--font-ui);font-size:0.72rem;color:var(--text-muted);margin-left:8px;">৩ ঘণ্টা আগে</span>
+                  <p style="font-family:var(--font-bn);font-size:0.88rem;color:var(--text-secondary);margin:6px 0 0;line-height:1.6;">দ্রব্যমূল্য নিয়ন্ত্রণ করাটাই হবে সবচেয়ে বড় চ্যালেঞ্জ। সরকার যদি সেটা করতে পারে তাহলেই মানুষ খুশি হবে।</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Articles -->
+          <div class="related-section">
+            <h3 class="related-section-title"><i class="bi bi-newspaper"></i> সম্পর্কিত খবর</h3>
+            <div class="row g-3">
+              <div class="col-sm-6 col-lg-4">
+                <div class="related-card h-100">
+                  <div class="related-card-img"><img src="https://picsum.photos/seed/rel1/400/225" alt="সম্পর্কিত খবর" /></div>
+                  <div class="related-card-body">
+                    <span class="story-cat-tag politics mb-2">রাজনীতি</span>
+                    <h4><a href="news-detail.html">প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন, কে কোন দায়িত্ব পেলেন?</a></h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5;">নতুন সরকার গঠনের পর প্রধানমন্ত্রী তার উপদেষ্টামণ্ডলীর মধ্যে কে কোন দপ্তরের দায়িত্ব পালন করবেন, তা বন্টন করে দিয়েছেন।</p>
+                    <div class="news-card-meta mt-2"><span class="story-time">Editor • ফেব্রুয়ারি ২১</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="related-card h-100">
+                  <div class="related-card-img"><img src="https://picsum.photos/seed/rel2/400/225" alt="সম্পর্কিত খবর" /></div>
+                  <div class="related-card-body">
+                    <span class="story-cat-tag politics mb-2">রাজনীতি</span>
+                    <h4><a href="news-detail.html">তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন</a></h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5;">বাংলাদেশের রাজনৈতিক ইতিহাসে এক বিরল ঘটনা হিসেবে বর্তমান রাষ্ট্রপতি গত তিন বছরে তিনবার নতুন সরকারকে শপথ পড়িয়েছেন।</p>
+                    <div class="news-card-meta mt-2"><span class="story-time">DNBD MEDIA • ফেব্রুয়ারি ১৮</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="related-card h-100">
+                  <div class="related-card-img"><img src="https://picsum.photos/seed/rel3/400/225" alt="সম্পর্কিত খবর" /></div>
+                  <div class="related-card-body">
+                    <span class="story-cat-tag politics mb-2">রাজনীতি</span>
+                    <h4><a href="news-detail.html">আগামী ১৭ ফেব্রুয়ারির মধ্যে সংসদ সদস্য শপথ</a></h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5;">আগামী ১৭ ফেব্রুয়ারির মধ্যে নবনির্বাচিত সংসদ সদস্যদের শপথ গ্রহণ অনুষ্ঠানের দিনক্ষণ চূড়ান্ত করা হয়েছে।</p>
+                    <div class="news-card-meta mt-2"><span class="story-time">DNBD • ফেব্রুয়ারি ১৩</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="related-card h-100">
+                  <div class="related-card-img"><img src="https://picsum.photos/seed/rel4/400/225" alt="সম্পর্কিত খবর" /></div>
+                  <div class="related-card-body">
+                    <span class="story-cat-tag national mb-2">জাতীয়</span>
+                    <h4><a href="news-detail.html">সংসদের বিরোধী দলীয় নেতা নির্বাচিত হলেন আনিসুল ইসলাম</a></h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5;">জাতীয় সংসদের প্রধান বিরোধী দলের নেতা হিসেবে আনুষ্ঠানিকভাবে মনোনীত হয়েছেন প্রবীণ রাজনীতিবিদ আনিসুল ইসলাম।</p>
+                    <div class="news-card-meta mt-2"><span class="story-time">DNBD • ফেব্রুয়ারি ০৫</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="related-card h-100">
+                  <div class="related-card-img"><img src="https://picsum.photos/seed/rel5/400/225" alt="সম্পর্কিত খবর" /></div>
+                  <div class="related-card-body">
+                    <span class="story-cat-tag politics mb-2">রাজনীতি</span>
+                    <h4><a href="news-detail.html">নাহিদ ইসলামকে প্রধান উপদেষ্টার দায়িত্ব প্রদান</a></h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5;">সরকারের কার্যক্রম ত্বরান্বিত করতে প্রখ্যাত অর্থনীতিবিদ নাহিদ ইসলামকে প্রধান উপদেষ্টা হিসেবে নিযুক্ত করা হয়েছে।</p>
+                    <div class="news-card-meta mt-2"><span class="story-time">Editor • ফেব্রুয়ারি ১৪</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="related-card h-100">
+                  <div class="related-card-img"><img src="https://picsum.photos/seed/rel6/400/225" alt="সম্পর্কিত খবর" /></div>
+                  <div class="related-card-body">
+                    <span class="story-cat-tag politics mb-2">রাজনীতি</span>
+                    <h4><a href="news-detail.html">রাজনৈতিক সংকট উত্তরণে জাতীয় সংলাপের প্রস্তাব</a></h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5;">চলমান রাজনৈতিক অচলাবস্থা নিরসনে সব দলের অংশগ্রহণে একটি অবাধ জাতীয় সংলাপ আয়োজনের প্রস্তাব দেওয়া হয়েছে।</p>
+                    <div class="news-card-meta mt-2"><span class="story-time">DNBD MEDIA • জানুয়ারি ২৮</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /main col -->
+
+        <!-- ===== ARTICLE SIDEBAR ===== -->
+        <div class="col-lg-4">
+          <aside class="detail-sticky-sidebar">
+
+            <!-- Latest News -->
+            <div class="detail-sidebar-widget">
+              <div class="dsw-header"><h3><i class="bi bi-lightning-charge-fill"></i> সর্বশেষ খবর</h3></div>
+              <ul class="detail-news-list list-unstyled mb-0">
+                <li>
+                  <span class="dnl-num">১</span>
+                  <div class="dnl-body">
+                    <h5><a href="news-detail.html">নারায়ণগঞ্জের সিদ্ধিরগঞ্জে বিপুল পরিমাণ মাদকসহ ১৫ জন গ্রেফতার</a></h5>
+                    <span class="story-time">মার্চ ০৭, ২০২৬</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="dnl-num">২</span>
+                  <div class="dnl-body">
+                    <h5><a href="news-detail.html">হঠাৎ স্বাস্থ্য কমপ্লেক্স পরিদর্শনে স্বাস্থ্যমন্ত্রী, ১৬ চিকিৎসক অনুপস্থিত</a></h5>
+                    <span class="story-time">মার্চ ০৭, ২০২৬</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="dnl-num">৩</span>
+                  <div class="dnl-body">
+                    <h5><a href="news-detail.html">ফেব্রুয়ারি মাসে ২২৭৩টি ফৌজদারি মামলা নিষ্পত্তি</a></h5>
+                    <span class="story-time">মার্চ ০৭, ২০২৬</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="dnl-num">৪</span>
+                  <div class="dnl-body">
+                    <h5><a href="news-detail.html">সাতক্ষীরা সীমান্তে মাদকাসক্ত ১২ লাখ টাকার মালামাল জব্দ</a></h5>
+                    <span class="story-time">মার্চ ০৭, ২০২৬</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="dnl-num">৫</span>
+                  <div class="dnl-body">
+                    <h5><a href="news-detail.html">প্রতিবেশী দেশগুলোতে আর হামলা চালাবে না ইরান</a></h5>
+                    <span class="story-time">মার্চ ০৭, ২০২৬</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Ad -->
+            <div class="detail-ad">
+              <i class="bi bi-image"></i>
+              <span>বিজ্ঞাপন • ৩০০×৩০০</span>
+            </div>
+
+            <!-- Most Read -->
+            <div class="detail-sidebar-widget">
+              <div class="dsw-header"><h3><i class="bi bi-fire"></i> সর্বাধিক পঠিত</h3></div>
+              <ol class="most-read-list">
+                <li><span class="mr-num">০১</span><a href="news-detail.html">নারায়ণগঞ্জে মাদকসহ ১৫ জন গ্রেফতার</a></li>
+                <li><span class="mr-num">০২</span><a href="news-detail.html">বাংলাদেশের নতুন প্রধানমন্ত্রী তারেক রহমান</a></li>
+                <li><span class="mr-num">০৩</span><a href="news-detail.html">ফেব্রুয়ারিতে ২২৭৩টি মামলা নিষ্পত্তি</a></li>
+                <li><span class="mr-num">০৪</span><a href="news-detail.html">স্বাস্থ্য কমপ্লেক্সে মন্ত্রীর হঠাৎ পরিদর্শন</a></li>
+                <li><span class="mr-num">০৫</span><a href="news-detail.html">ইরানের প্রতিবেশী হামলা না করার ঘোষণা</a></li>
+              </ol>
+            </div>
+
+            <!-- Opinion -->
+            <div class="detail-sidebar-widget mt-4">
+              <div class="dsw-header"><h3><i class="bi bi-pencil-square"></i> মতামত</h3></div>
+              <div class="opinion-card">
+                <div class="opinion-author">
+                  <img src="https://picsum.photos/seed/auth11/80/80" alt="লেখক" />
+                  <div><strong>এস এম মিরাজ হোসেন টিপু</strong><span>প্রধান সম্পাদক</span></div>
+                </div>
+                <h4><a href="news-detail.html">দেশটাকে জ্ঞানের আলোয় আলোকিত করতে হবে</a></h4>
+                <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Social Follow -->
+            <div class="detail-sidebar-widget mt-4 social-widget">
+              <div class="dsw-header"><h3>আমাদের অনুসরণ করুন</h3></div>
+              <div class="social-follow-grid">
+                <a href="https://www.facebook.com/DailyNewsBDonline" class="sf-btn fb"><i class="bi bi-facebook"></i> ফেসবুক</a>
+                <a href="https://www.youtube.com/@DailyNewsBDonline" class="sf-btn yt"><i class="bi bi-youtube"></i> ইউটিউব</a>
+                <a href="#" class="sf-btn tw"><i class="bi bi-twitter-x"></i> টুইটার</a>
+                <a href="#" class="sf-btn ig"><i class="bi bi-instagram"></i> ইনস্টাগ্রাম</a>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+
+      </div><!-- /row -->
+
+      <!-- Newsletter -->
+      <div class="newsletter-strip my-5">
+        <div class="row align-items-center g-3">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="nl-icon"><i class="bi bi-envelope-paper-fill"></i></div>
+              <div>
+                <h3>নিউজলেটারে সাবস্ক্রাইব করুন</h3>
+                <p>প্রতিদিনের সেরা খবর সরাসরি আপনার ইনবক্সে পান</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="nl-form">
+              <input type="email" placeholder="আপনার ইমেইল লিখুন..." id="newsletterEmail" />
+              <button type="button" id="nlSubscribeBtn">সাবস্ক্রাইব <i class="bi bi-arrow-right"></i></button>
+            </div>
+            <div id="nlMessage" class="nl-message d-none"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container-fluid px-3 px-lg-5">
+        <div class="footer-about-row">
+          <img src="logo_main.png" alt="Daily News BD" class="footer-logo-img" />
+          <div class="footer-about-text">
+            <p class="footer-about-title">ABOUT US</p>
+            <p>The Daily News BD Online is a promising online news portal of Bangladesh. We collect news from all over the world using actual sources. So you will find the true news here. Be with us, be with truth.</p>
+          </div>
+          <div class="footer-about-social">
+            <a href="https://www.facebook.com/DailyNewsBDonline" class="footer-social-pill" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-pill" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/@DailyNewsBDonline" class="footer-social-pill" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="row g-4 pt-2">
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">CONTACT DETAILS</h4>
+            <p class="footer-contact-text">Bangladesh Office : 2/2, R. K. Mission Road, Motijheel, Dhaka-1203.<br />Mail : dailynewsbdonline@gmail.com<br />Mobile : 01731-828236, 01919-667217</p>
+            <h4 class="footer-col-heading mt-3">USA OFFICE</h4>
+            <p class="footer-contact-text">109-17 205th St, Saint Albans, NY 11412. Phone : +1 (718) 864-3245</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">LONDON OFFICE</h4>
+            <p class="footer-contact-text">8/A Prime Meridian Walk. Canary Wharf, London.<br />Phone : +44 7597 597282</p>
+            <h4 class="footer-col-heading mt-3">UAE OFFICE</h4>
+            <p class="footer-contact-text">Riyadh – Al-Mursalat, District – King, Abdullah Road-12461.</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">EDITOR : MD SAIDUL ISLAM</h4>
+            <p class="footer-contact-text">Chief Editor : SM. Miraz Hossain Tipu</p>
+            <h4 class="footer-col-heading mt-3">EXECUTIVE EDITOR : MD LUTFOR RAHMAN</h4>
+            <p class="footer-contact-text">Mobile : +88 01715-818695</p>
+            <h4 class="footer-col-heading mt-3">DEPUTY EDITOR : FATEMA AKTER RANI</h4>
+            <p class="footer-contact-text">Mobile : +88 01712-898043</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">বিভাগ</h4>
+            <ul class="footer-links">
+              <li><a href="news-category.html?cat=জাতীয়">জাতীয়</a></li>
+              <li><a href="news-category.html?cat=রাজনীতি">রাজনীতি</a></li>
+              <li><a href="news-category.html?cat=বাণিজ্য">বাণিজ্য</a></li>
+              <li><a href="news-category.html?cat=আন্তর্জাতিক">আন্তর্জাতিক</a></li>
+              <li><a href="news-category.html?cat=খেলাধুলা">খেলাধুলা</a></li>
+              <li><a href="news-category.html?cat=বিনোদন">বিনোদন</a></li>
+              <li><a href="news-category.html?cat=তথ্যপ্রযুক্তি">তথ্যপ্রযুক্তি</a></li>
+              <li><a href="news-category.html?cat=স্বাস্থ্য">স্বাস্থ্য</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container-fluid px-3 px-lg-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <p>Designed and developed by <a href="https://www.dailynewsbd.online/" target="_blank" class="footer-credit">Daily News BD.</a></p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="index.html">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="#">RTL Version</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop"><i class="bi bi-chevron-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    (function() {
+      // Reading Progress Bar
+      const progressBar = document.getElementById('readingProgress');
+      window.addEventListener('scroll', function() {
+        const article = document.getElementById('articleBody');
+        if (!article || !progressBar) return;
+        const articleTop = article.offsetTop;
+        const articleHeight = article.offsetHeight;
+        const scrolled = window.scrollY - articleTop;
+        const progress = Math.max(0, Math.min(100, (scrolled / articleHeight) * 100));
+        progressBar.style.width = progress + '%';
+      }, { passive: true });
+
+      // Font size controls
+      const articleBody = document.getElementById('articleBody');
+      let fontSize = 1.05;
+      document.getElementById('fontIncrease')?.addEventListener('click', function() {
+        fontSize = Math.min(1.4, fontSize + 0.05);
+        if (articleBody) articleBody.style.fontSize = fontSize + 'rem';
+      });
+      document.getElementById('fontDecrease')?.addEventListener('click', function() {
+        fontSize = Math.max(0.85, fontSize - 0.05);
+        if (articleBody) articleBody.style.fontSize = fontSize + 'rem';
+      });
+
+      // Copy Link
+      function copyLink(btnId) {
+        const btn = document.getElementById(btnId);
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+          navigator.clipboard.writeText(window.location.href).then(function() {
+            btn.innerHTML = '<i class="bi bi-check-lg"></i> কপি হয়েছে!';
+            setTimeout(function() {
+              btn.innerHTML = '<i class="bi bi-link-45deg"></i> লিংক কপি';
+            }, 2000);
+          });
+        });
+      }
+      copyLink('copyLinkBtn');
+      copyLink('copyLinkBtn2');
+    })();
+  </script>
+</body>
+</html>

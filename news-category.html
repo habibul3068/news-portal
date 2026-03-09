@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>রাজনীতি | Daily News BD</title>
+  <meta name="description" content="Daily News BD - রাজনীতি বিভাগের সর্বশেষ খবর" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== UTILITY BAR ===== -->
+  <div class="utility-bar">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-3">
+          <span class="utility-date" id="currentDate"></span>
+          <span class="utility-divider d-none d-md-inline">|</span>
+          <span class="utility-time d-none d-md-inline" id="currentTime"></span>
+          <span class="utility-divider d-none d-md-inline">|</span>
+          <span class="utility-weather d-none d-md-inline"><i class="bi bi-cloud-sun"></i> ঢাকা ৩২°C</span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="social-icons d-none d-sm-flex gap-2">
+            <a href="https://www.facebook.com/DailyNewsBDonline" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@DailyNewsBDonline" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+          </button>
+          <a href="#english-section" class="en-btn">English</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER + NAVBAR ===== -->
+  <header class="site-header sticky-top" id="mainNav">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="header-inner d-flex align-items-center">
+        <a href="index.html" class="logo-link">
+          <img src="logo_main.png" alt="Daily News BD" class="site-logo-img" />
+        </a>
+        <nav class="main-nav navbar navbar-expand-lg flex-grow-1 justify-content-center">
+          <div class="mobile-search-wrap d-lg-none ms-auto me-2">
+            <button class="nav-search-mini" id="navSearchToggleMobile" aria-label="Toggle search"><i class="bi bi-search"></i></button>
+          </div>
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavMenu" aria-controls="mainNavMenu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="mainNavMenu">
+            <ul class="navbar-nav align-items-lg-center">
+              <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=জাতীয়">জাতীয়</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=রাজনীতি">রাজনীতি</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বাণিজ্য">বাণিজ্য</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বাংলাদেশ">বাংলাদেশ</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=প্রবাস">প্রবাস</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বিশ্ব">বিশ্ব সংবাদ</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=বিনোদন">বিনোদন</a></li>
+              <li class="nav-item"><a class="nav-link" href="news-category.html?cat=খেলাধুলা">খেলাধুলা</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">অন্যান্য</a>
+                <ul class="dropdown-menu custom-dropdown">
+                  <li><a class="dropdown-item" href="#">তথ্যপ্রযুক্তি</a></li>
+                  <li><a class="dropdown-item" href="#">স্বাস্থ্য</a></li>
+                  <li><a class="dropdown-item" href="#">শিক্ষা</a></li>
+                  <li><a class="dropdown-item" href="#">ধর্ম</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">মতামত</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="nav-right-pills d-flex align-items-center gap-2 ms-lg-3">
+              <a href="#" class="nav-en-pill">EN</a>
+              <button class="nav-search-mini" id="navSearchToggle"><i class="bi bi-search"></i></button>
+            </div>
+          </div>
+        </nav>
+        <a href="#" class="subscribe-btn d-none d-lg-flex"><i class="bi bi-bell-fill me-1"></i> সাবস্ক্রাইব</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="floating-search" id="floatingSearch">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex gap-2">
+        <input type="text" class="form-control" placeholder="খবর খুঁজুন..." id="floatingSearchInput" />
+        <button class="btn btn-danger" id="floatingSearchClose"><i class="bi bi-x-lg"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BREAKING BAR ===== -->
+  <div class="breaking-bar">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="d-flex align-items-center">
+        <div class="breaking-label"><span>সর্বশেষ</span></div>
+        <div class="ticker-wrap">
+          <div class="ticker-track" id="tickerTrack">
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> <a href="#">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</a></span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> <a href="#">প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন সম্পন্ন</a></span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> <a href="#">সংসদ সদস্যরা শপথ নিলেন, সংসদ সচল</a></span>
+            <span class="ticker-item"><i class="bi bi-circle-fill"></i> <a href="#">তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORY HERO ===== -->
+  <div class="cat-hero">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="cat-hero-inner">
+        <nav class="cat-breadcrumb" aria-label="breadcrumb">
+          <a href="index.html"><i class="bi bi-house-fill"></i> হোম</a>
+          <i class="bi bi-chevron-right"></i>
+          <span>রাজনীতি</span>
+        </nav>
+        <div class="cat-title-row">
+          <div class="cat-icon-badge"><i class="bi bi-flag-fill"></i></div>
+          <div>
+            <h1 class="cat-title" id="catPageTitle">রাজনীতি</h1>
+            <p class="cat-subtitle">রাজনীতি বিভাগের সর্বশেষ ও গুরুত্বপূর্ণ সংবাদ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Filter Tabs -->
+    <div class="cat-filter-bar">
+      <div class="container-fluid px-3 px-lg-5">
+        <div class="filter-tabs" role="tablist">
+          <button class="filter-tab active" data-filter="all">সব খবর</button>
+          <button class="filter-tab" data-filter="latest">সর্বশেষ</button>
+          <button class="filter-tab" data-filter="popular">জনপ্রিয়</button>
+          <button class="filter-tab" data-filter="featured">বিশেষ প্রতিবেদন</button>
+          <button class="filter-tab" data-filter="opinion">মতামত</button>
+          <button class="filter-tab" data-filter="video">ভিডিও</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+    <div class="container-fluid px-3 px-lg-5 py-4">
+
+      <!-- Featured Top Card -->
+      <div class="cat-featured-card mb-4 dn-animate">
+        <div class="cat-featured-img">
+          <img src="https://picsum.photos/seed/catfeat1/800/450" alt="প্রধান খবর" />
+          <span class="story-cat-badge">বিশেষ প্রতিবেদন</span>
+        </div>
+        <div class="cat-featured-body">
+          <span class="story-cat-tag politics mb-2">রাজনীতি</span>
+          <h2><a href="news-detail.html">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান — দেশজুড়ে উৎসবের আমেজ</a></h2>
+          <p>নতুন মন্ত্রিসভা গঠনের পর দেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান। তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন। রাজধানী ঢাকাসহ সারাদেশে উৎসবের আমেজ বিরাজ করছে।</p>
+          <div class="cat-featured-meta">
+            <div class="author-chip">
+              <img src="https://picsum.photos/seed/auth1/40/40" alt="লেখক" />
+              <span>DNBD MEDIA</span>
+            </div>
+            <span class="dot-sep">•</span>
+            <span><i class="bi bi-calendar3"></i> ফেব্রুয়ারি ১৮, ২০২৬</span>
+            <span class="dot-sep">•</span>
+            <span><i class="bi bi-eye"></i> ১২,৪৫৮ বার পঠিত</span>
+            <a href="news-detail.html" class="read-link ms-auto">বিস্তারিত পড়ুন <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Main Content Column -->
+        <div class="col-lg-8">
+
+          <!-- Sort / View toggle bar -->
+          <div class="sort-bar">
+            <div class="sort-bar-left">মোট <strong>১২৮টি</strong> সংবাদ পাওয়া গেছে</div>
+            <div class="d-flex align-items-center gap-3">
+              <select class="sort-select" id="sortSelect">
+                <option value="newest">সর্বশেষ আগে</option>
+                <option value="oldest">পুরনো আগে</option>
+                <option value="popular">সর্বাধিক পঠিত</option>
+              </select>
+              <div class="view-toggle">
+                <button class="view-btn" id="listViewBtn" title="তালিকা দেখুন"><i class="bi bi-list-ul"></i></button>
+                <button class="view-btn active" id="gridViewBtn" title="গ্রিড দেখুন"><i class="bi bi-grid-3x3-gap-fill"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEWS GRID — default grid view -->
+          <div class="news-grid-area" id="newsGridArea">
+
+            <!-- Grid View -->
+            <div class="row g-3" id="gridViewContainer">
+
+              <!-- Card 1 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg1/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন, কে কোন দায়িত্ব পেলেন?</a></h4>
+                    <p class="cat-card-excerpt">নতুন সরকার গঠনের পর উপদেষ্টাদের মধ্যে দপ্তর বণ্টন করা হয়েছে। প্রতিরক্ষা থেকে শিক্ষা পর্যন্ত সব মন্ত্রণালয়ের দায়িত্ব বিভাজন স্পষ্ট হয়েছে।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ২১</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg2/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন</a></h4>
+                    <p class="cat-card-excerpt">বাংলাদেশের রাজনৈতিক ইতিহাসে এটি একটি অনন্য ঘটনা। রাষ্ট্রপতি সাহাবুদ্দিন তিন বছরে তৃতীয়বার নতুন সরকারকে শপথ গ্রহণ করালেন।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ১৮</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg3/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">আগামী ১৭ ফেব্রুয়ারির মধ্যে সংসদ সদস্য শপথ: শিফিকুল আলম</a></h4>
+                    <p class="cat-card-excerpt">নবনির্বাচিত সংসদ সদস্যরা আগামী ১৭ ফেব্রুয়ারির মধ্যে শপথ নেবেন বলে জানিয়েছেন নির্বাচন কমিশনার শিফিকুল আলম।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ১৩</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg4/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">মন্ত্রী হিসেবে শপথ নিলেন কায়কোবাদ, পেলেন স্বরাষ্ট্র মন্ত্রণালয়</a></h4>
+                    <p class="cat-card-excerpt">নতুন মন্ত্রিসভায় স্বরাষ্ট্র মন্ত্রণালয়ের দায়িত্ব পেয়েছেন কায়কোবাদ। শপথ অনুষ্ঠানে রাষ্ট্রপতি সাহাবুদ্দিন তাঁকে শপথবাক্য পাঠ করান।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ১৮</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg5/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">নাহিদ ইসলামকে প্রধান উপদেষ্টার দপ্তর প্রদান করা হয়েছে</a></h4>
+                    <p class="cat-card-excerpt">তথ্য ও সম্প্রচার মন্ত্রণালয়ের পাশাপাশি প্রধান উপদেষ্টার কার্যালয়ের দায়িত্বও দেওয়া হয়েছে নাহিদ ইসলামকে।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ১৪</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg6/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">বিএনপি নেতৃত্বের সাথে বৈঠক, নির্বাচন নিয়ে গুরুত্বপূর্ণ আলোচনা</a></h4>
+                    <p class="cat-card-excerpt">বিভিন্ন রাজনৈতিক দলের নেতাদের সাথে নির্বাচন কমিশনের একটি বৈঠক অনুষ্ঠিত হয়েছে। সুষ্ঠু নির্বাচনের রোডম্যাপ নিয়ে বিস্তারিত আলোচনা হয়।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ১০</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /row grid first 6 -->
+
+            <!-- ===== INLINE BANNER AD ===== -->
+            <div class="inline-ad-banner my-4">
+              <i class="bi bi-image me-2"></i> বিজ্ঞাপন • ৭২৮×৯০
+            </div>
+
+            <!-- ===== SPECIAL REPORT STRIP ===== -->
+            <div class="special-strip mb-4">
+              <div class="special-strip-header">
+                <i class="bi bi-star-fill"></i> বিশেষ প্রতিবেদন
+              </div>
+              <div class="special-strip-body">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="special-report-card">
+                      <div class="sr-img"><img src="https://picsum.photos/seed/sr1/400/220" alt="বিশেষ প্রতিবেদন" /></div>
+                      <div class="sr-body">
+                        <span class="sr-badge">বিশেষ প্রতিবেদন</span>
+                        <h4><a href="news-detail.html">বাংলাদেশের নতুন রাজনৈতিক মানচিত্র: কোন দল কোথায় দাঁড়িয়ে?</a></h4>
+                        <p>নির্বাচনের পর দেশের রাজনৈতিক প্রেক্ষাপট বদলে গেছে। বিভিন্ন দলের শক্তি-দুর্বলতা বিশ্লেষণ করেছেন বিশেষজ্ঞরা।</p>
+                        <div class="sr-meta"><i class="bi bi-person-fill"></i> বিশেষ প্রতিনিধি <span class="dot-sep">•</span> ফেব্রুয়ারি ২০, ২০২৬</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="special-report-card">
+                      <div class="sr-img"><img src="https://picsum.photos/seed/sr2/400/220" alt="বিশেষ প্রতিবেদন" /></div>
+                      <div class="sr-body">
+                        <span class="sr-badge">বিশ্লেষণ</span>
+                        <h4><a href="news-detail.html">নতুন সরকারের প্রথম ১০০ দিনে কী কী চ্যালেঞ্জ মোকাবিলা করতে হবে?</a></h4>
+                        <p>অর্থনীতি, আইন-শৃঙ্খলা ও কূটনীতি — তিন ক্ষেত্রেই নতুন সরকারকে কঠিন পরীক্ষায় পড়তে হবে বলে মনে করছেন বিশ্লেষকরা।</p>
+                        <div class="sr-meta"><i class="bi bi-person-fill"></i> সিনিয়র রিপোর্টার <span class="dot-sep">•</span> ফেব্রুয়ারি ১৯, ২০২৬</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== SECOND GRID ROW (Cards 7–12) ===== -->
+            <div class="row g-3 mb-3" id="gridViewContainer2">
+
+              <!-- Card 7 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg7/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">আওয়ামী লীগের নতুন কমিটি গঠন স্থগিত রাখার সিদ্ধান্ত</a></h4>
+                    <p class="cat-card-excerpt">দলের আভ্যন্তরীণ সংকট নিরসনে আপাতত নতুন কমিটি গঠন না করার সিদ্ধান্ত নিয়েছে আওয়ামী লীগের কেন্দ্রীয় কর্মপরিষদ।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ০৭</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg8/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">সংসদের বিরোধী দলীয় নেতা নির্বাচিত হলেন আনিসুল ইসলাম</a></h4>
+                    <p class="cat-card-excerpt">সংসদে বিরোধী দলীয় নেতা হিসেবে দায়িত্ব নিয়েছেন আনিসুল ইসলাম মাহমুদ। তাঁর নেতৃত্বে সংসদে শক্তিশালী বিরোধিতার আশা করছে দল।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ফেব্রুয়ারি ০৫</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg9/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">রাজনৈতিক সংকট উত্তরণে জাতীয় সংলাপের প্রস্তাব</a></h4>
+                    <p class="cat-card-excerpt">দেশের চলমান রাজনৈতিক টানাপড়েন নিরসনে জাতীয় সংলাপের আয়োজনের প্রস্তাব দিয়েছে সুশীল সমাজের বিভিন্ন সংগঠন।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ২৮</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 10 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg10/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">নতুন নির্বাচন কমিশন গঠনে সার্চ কমিটির কাজ শুরু</a></h4>
+                    <p class="cat-card-excerpt">রাষ্ট্রপতির নির্দেশে নতুন নির্বাচন কমিশন গঠনের লক্ষ্যে ৬ সদস্যের সার্চ কমিটি আনুষ্ঠানিকভাবে কাজ শুরু করেছে।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ২৫</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 11 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg11/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">জামায়াতের নেতৃত্বে পরিবর্তন, নতুন আমির নির্বাচিত</a></h4>
+                    <p class="cat-card-excerpt">বাংলাদেশ জামায়াতে ইসলামী তাদের নতুন আমির নির্বাচিত করেছে। দলের কেন্দ্রীয় শুরা সভায় এই সিদ্ধান্ত গৃহীত হয়।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ২০</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 12 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg12/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">ইউনূস সরকারের প্রথম বার্ষিকী: অর্জন ও ব্যর্থতার খতিয়ান</a></h4>
+                    <p class="cat-card-excerpt">অন্তর্বর্তী সরকারের এক বছর পূর্তিতে দেশবাসীর মূল্যায়ন কী? অর্থনীতি ও প্রশাসনে কতটা এগিয়েছে তারা?</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ১৫</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /second grid row -->
+
+            <!-- ===== OPINION STRIP ===== -->
+            <div class="opinion-strip mb-4">
+              <div class="opinion-strip-header">
+                <i class="bi bi-chat-quote-fill"></i> মতামত ও বিশ্লেষণ
+                <a href="news-category.html?cat=মতামত" class="ms-auto see-all-sm">সব দেখুন <i class="bi bi-arrow-right"></i></a>
+              </div>
+              <div class="opinion-strip-list">
+                <div class="opinion-strip-item">
+                  <img src="https://picsum.photos/seed/op1/60/60" alt="লেখক" />
+                  <div>
+                    <h5><a href="news-detail.html">নতুন সরকারের কাছে জনগণের প্রত্যাশা কতটুকু পূরণ হবে?</a></h5>
+                    <span><i class="bi bi-person-fill"></i> অধ্যাপক ড. মোহাম্মদ হাবিব <span class="dot-sep">•</span> ফেব্রুয়ারি ২২</span>
+                  </div>
+                </div>
+                <div class="opinion-strip-item">
+                  <img src="https://picsum.photos/seed/op2/60/60" alt="লেখক" />
+                  <div>
+                    <h5><a href="news-detail.html">সংসদীয় গণতন্ত্র পুনরুদ্ধারের পথে বাধা কোথায়?</a></h5>
+                    <span><i class="bi bi-person-fill"></i> সাবেক রাষ্ট্রদূত শামসুর রহমান <span class="dot-sep">•</span> ফেব্রুয়ারি ২০</span>
+                  </div>
+                </div>
+                <div class="opinion-strip-item">
+                  <img src="https://picsum.photos/seed/op3/60/60" alt="লেখক" />
+                  <div>
+                    <h5><a href="news-detail.html">রাজনীতিতে তরুণ নেতৃত্বের উত্থান: সুযোগ না চ্যালেঞ্জ?</a></h5>
+                    <span><i class="bi bi-person-fill"></i> কলামিস্ট ফারিদা হোসেন <span class="dot-sep">•</span> ফেব্রুয়ারি ১৭</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== THIRD GRID ROW (Cards 13–18) ===== -->
+            <div class="row g-3 mb-3">
+
+              <!-- Card 13 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg13/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">সিটি করপোরেশন নির্বাচনের প্রস্তুতি শুরু, তারিখ ঘোষণার অপেক্ষা</a></h4>
+                    <p class="cat-card-excerpt">ঢাকা উত্তর ও দক্ষিণ সিটি করপোরেশনসহ বেশ কয়েকটি সিটিতে নির্বাচনের প্রস্তুতি নিচ্ছে নির্বাচন কমিশন।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ১২</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 14 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg14/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">জাতীয় পার্টির নতুন মহাসচিব মনোনীত, দলে ব্যাপক রদবদল</a></h4>
+                    <p class="cat-card-excerpt">জাতীয় পার্টির কেন্দ্রীয় কার্যনির্বাহী কমিটির সভায় নতুন মহাসচিব মনোনীত করা হয়েছে। দলের ভেতরে ব্যাপক পরিবর্তন আসছে।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ০৮</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 15 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg15/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">সংবিধান সংশোধনে বিশেষজ্ঞ কমিটি গঠন করা হচ্ছে</a></h4>
+                    <p class="cat-card-excerpt">দেশের সংবিধান যুগোপযোগী করতে বিশেষজ্ঞ কমিটি গঠনের উদ্যোগ নিয়েছে সরকার। সংসদে এ বিষয়ে বিস্তারিত আলোচনা হবে।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ০৫</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 16 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg16/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">স্থানীয় সরকার নির্বাচনে ইভিএম বাতিলের দাবি বিএনপির</a></h4>
+                    <p class="cat-card-excerpt">আসন্ন স্থানীয় সরকার নির্বাচনে ইলেকট্রনিক ভোটিং মেশিন ব্যবহার না করার দাবি জানিয়েছে বিএনপি।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> জানুয়ারি ০২</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 17 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg17/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">রাষ্ট্রপতির সঙ্গে বিভিন্ন দলের নেতাদের সৌজন্য সাক্ষাৎ</a></h4>
+                    <p class="cat-card-excerpt">বঙ্গভবনে রাষ্ট্রপতি মো. সাহাবুদ্দিনের সাথে বিভিন্ন রাজনৈতিক দলের নেতারা সৌজন্য সাক্ষাৎ করেছেন।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ডিসেম্বর ২৯</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 18 -->
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="news-card v-card h-100">
+                  <div class="news-card-img"><img src="https://picsum.photos/seed/cg18/400/260" alt="খবর" /></div>
+                  <div class="news-card-body">
+                    <span class="story-cat-tag politics mb-1 d-inline-block">রাজনীতি</span>
+                    <h4><a href="news-detail.html">দেশে রাজনৈতিক স্থিতিশীলতার জন্য আন্তর্জাতিক সম্প্রদায়ের আহ্বান</a></h4>
+                    <p class="cat-card-excerpt">বাংলাদেশে রাজনৈতিক স্থিতিশীলতা বজায় রাখতে জাতিসংঘসহ বিভিন্ন আন্তর্জাতিক সংস্থা আহ্বান জানিয়েছে।</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+                      <span class="story-time"><i class="bi bi-clock"></i> ডিসেম্বর ২৫</span>
+                      <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /third grid row -->
+
+            <!-- List View (hidden by default) -->
+            <div class="d-flex flex-column gap-3" id="listViewContainer" style="display:none!important">
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl1/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন, কে কোন দায়িত্ব পেলেন?</a></h3>
+                  <p>নতুন সরকার গঠনের পর উপদেষ্টাদের মধ্যে দপ্তর বণ্টন করা হয়েছে। প্রতিরক্ষা থেকে শিক্ষা পর্যন্ত সব মন্ত্রণালয়ের দায়িত্ব বিভাজন স্পষ্ট করা হয়েছে।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>Editor</span><span class="dot-sep">•</span><span>ফেব্রুয়ারি ২১, ২০২৬</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>৮,২৩১</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl2/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন</a></h3>
+                  <p>বাংলাদেশের রাজনৈতিক ইতিহাসে এটি একটি অনন্য ঘটনা। রাষ্ট্রপতি সাহাবুদ্দিন তিন বছরে তৃতীয়বার নতুন সরকারকে শপথ গ্রহণ করালেন।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>DNBD MEDIA</span><span class="dot-sep">•</span><span>ফেব্রুয়ারি ১৮, ২০২৬</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>১৫,৮৭৬</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl3/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">আগামী ১৭ ফেব্রুয়ারির মধ্যে সংসদ সদস্য শপথ: শিফিকুল আলম</a></h3>
+                  <p>নবনির্বাচিত সংসদ সদস্যরা আগামী ১৭ ফেব্রুয়ারির মধ্যে শপথ নেবেন বলে জানিয়েছেন নির্বাচন কমিশনার শিফিকুল আলম।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>DNBD</span><span class="dot-sep">•</span><span>ফেব্রুয়ারি ১৩, ২০২৬</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>৬,৪৫২</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl4/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">বিএনপি নেতৃত্বের সাথে বৈঠক, নির্বাচনের রোডম্যাপ নিয়ে আলোচনা</a></h3>
+                  <p>বিভিন্ন রাজনৈতিক দলের নেতাদের সাথে নির্বাচন কমিশনের গুরুত্বপূর্ণ বৈঠক অনুষ্ঠিত হয়েছে। সুষ্ঠু নির্বাচনের রোডম্যাপ তৈরিতে একমত হয়েছে সব দল।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>DNBD MEDIA</span><span class="dot-sep">•</span><span>ফেব্রুয়ারি ১০, ২০২৬</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>৯,১২৩</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl5/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">নতুন নির্বাচন কমিশন গঠনে সার্চ কমিটির কাজ শুরু</a></h3>
+                  <p>রাষ্ট্রপতির নির্দেশে নতুন নির্বাচন কমিশন গঠনের লক্ষ্যে ৬ সদস্যের সার্চ কমিটি আনুষ্ঠানিকভাবে কাজ শুরু করেছে। বিভিন্ন পেশার বিশিষ্ট ব্যক্তিদের নাম বিবেচনায় নেওয়া হচ্ছে।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>DNBD</span><span class="dot-sep">•</span><span>জানুয়ারি ২৫, ২০২৬</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>৭,৮৯০</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl6/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">জামায়াতের নেতৃত্বে পরিবর্তন, নতুন আমির নির্বাচিত</a></h3>
+                  <p>বাংলাদেশ জামায়াতে ইসলামী তাদের নতুন আমির নির্বাচিত করেছে। দলের কেন্দ্রীয় শুরা সভায় এই সিদ্ধান্ত গৃহীত হয় এবং নতুন নেতৃত্বকে স্বাগত জানিয়েছেন সমর্থকরা।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>DNBD MEDIA</span><span class="dot-sep">•</span><span>জানুয়ারি ২০, ২০২৬</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>১১,৩৪৫</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl7/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">সংবিধান সংশোধনে বিশেষজ্ঞ কমিটি গঠন করা হচ্ছে</a></h3>
+                  <p>দেশের সংবিধান যুগোপযোগী করতে বিশেষজ্ঞ কমিটি গঠনের উদ্যোগ নিয়েছে সরকার। সংসদে এ বিষয়ে বিস্তারিত আলোচনা হবে বলে জানিয়েছেন আইনমন্ত্রী।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>DNBD</span><span class="dot-sep">•</span><span>জানুয়ারি ০৫, ২০২৬</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>৫,৬৭৮</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="news-list-card">
+                <div class="news-list-img"><img src="https://picsum.photos/seed/cl8/300/180" alt="খবর" /></div>
+                <div class="news-list-body">
+                  <span class="story-cat-tag politics mb-2 d-inline-block">রাজনীতি</span>
+                  <h3><a href="news-detail.html">দেশে রাজনৈতিক স্থিতিশীলতার জন্য আন্তর্জাতিক সম্প্রদায়ের আহ্বান</a></h3>
+                  <p>বাংলাদেশে রাজনৈতিক স্থিতিশীলতা বজায় রাখতে জাতিসংঘসহ বিভিন্ন আন্তর্জাতিক সংস্থা আহ্বান জানিয়েছে। কূটনৈতিক তৎপরতা বৃদ্ধি পেয়েছে।</p>
+                  <div class="news-list-footer">
+                    <div class="news-list-meta"><span>DNBD MEDIA</span><span class="dot-sep">•</span><span>ডিসেম্বর ২৫, ২০২৫</span><span class="dot-sep">•</span><i class="bi bi-eye"></i><span>৪,৩২১</span></div>
+                    <a href="news-detail.html" class="read-link">পড়ুন <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /list view -->
+
+          </div><!-- /news-grid-area -->
+
+          <!-- PAGINATION -->
+          <div class="cat-pagination">
+            <a href="#" class="page-btn"><i class="bi bi-chevron-double-left"></i></a>
+            <a href="#" class="page-btn"><i class="bi bi-chevron-left"></i></a>
+            <a href="#" class="page-btn active">১</a>
+            <a href="#" class="page-btn">২</a>
+            <a href="#" class="page-btn">৩</a>
+            <a href="#" class="page-btn">৪</a>
+            <a href="#" class="page-btn">৫</a>
+            <span class="page-btn dots">...</span>
+            <a href="#" class="page-btn">১৩</a>
+            <a href="#" class="page-btn"><i class="bi bi-chevron-right"></i></a>
+            <a href="#" class="page-btn"><i class="bi bi-chevron-double-right"></i></a>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="col-lg-4">
+          <aside>
+
+            <!-- Latest News -->
+            <div class="cat-sidebar-widget">
+              <div class="csw-header"><h3><i class="bi bi-lightning-charge-fill"></i> সর্বশেষ খবর</h3></div>
+              <ul class="sidebar-news-list list-unstyled mb-0">
+                <li>
+                  <div class="snl-img"><img src="https://picsum.photos/seed/sn1/120/80" alt="খবর" /></div>
+                  <div class="snl-body"><h5><a href="news-detail.html">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</a></h5><span class="story-time">ফেব্রুয়ারি ১৮, ২০২৬</span></div>
+                </li>
+                <li>
+                  <div class="snl-img"><img src="https://picsum.photos/seed/sn2/120/80" alt="খবর" /></div>
+                  <div class="snl-body"><h5><a href="news-detail.html">প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন সম্পন্ন</a></h5><span class="story-time">ফেব্রুয়ারি ২১, ২০২৬</span></div>
+                </li>
+                <li>
+                  <div class="snl-img"><img src="https://picsum.photos/seed/sn3/120/80" alt="খবর" /></div>
+                  <div class="snl-body"><h5><a href="news-detail.html">নাহিদ ইসলামকে প্রধান উপদেষ্টার দায়িত্ব প্রদান</a></h5><span class="story-time">ফেব্রুয়ারি ১৪, ২০২৬</span></div>
+                </li>
+                <li>
+                  <div class="snl-img"><img src="https://picsum.photos/seed/sn4/120/80" alt="খবর" /></div>
+                  <div class="snl-body"><h5><a href="news-detail.html">সংসদ সদস্যরা ১৭ ফেব্রুয়ারি শপথ নেবেন</a></h5><span class="story-time">ফেব্রুয়ারি ১৩, ২০২৬</span></div>
+                </li>
+                <li>
+                  <div class="snl-img"><img src="https://picsum.photos/seed/sn5/120/80" alt="খবর" /></div>
+                  <div class="snl-body"><h5><a href="news-detail.html">বিরোধী দলীয় নেতা নির্বাচিত হলেন আনিসুল ইসলাম</a></h5><span class="story-time">ফেব্রুয়ারি ০৫, ২০২৬</span></div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div class="sidebar-ad">
+              <i class="bi bi-image"></i>
+              <span>বিজ্ঞাপন • ৩০০×২৫০</span>
+            </div>
+
+            <!-- Most Read -->
+            <div class="cat-sidebar-widget">
+              <div class="csw-header"><h3><i class="bi bi-fire"></i> সর্বাধিক পঠিত</h3></div>
+              <ol class="most-read-list">
+                <li><span class="mr-num">০১</span><a href="news-detail.html">বাংলাদেশের নতুন প্রধানমন্ত্রী হিসেবে শপথ নিলেন তারেক রহমান</a></li>
+                <li><span class="mr-num">০২</span><a href="news-detail.html">প্রধানমন্ত্রীর ৮ উপদেষ্টার দপ্তর বণ্টন, কে কোন দায়িত্ব পেলেন?</a></li>
+                <li><span class="mr-num">০৩</span><a href="news-detail.html">তিন বছরে তিন সরকারকে শপথ করালেন রাষ্ট্রপতি সাহাবুদ্দিন</a></li>
+                <li><span class="mr-num">০৪</span><a href="news-detail.html">বিরোধী দলীয় নেতা নির্বাচিত আনিসুল ইসলাম</a></li>
+                <li><span class="mr-num">০৫</span><a href="news-detail.html">রাজনৈতিক সংকট উত্তরণে জাতীয় সংলাপের প্রস্তাব</a></li>
+              </ol>
+            </div>
+
+            <!-- Topics / Tags -->
+            <div class="cat-sidebar-widget mt-4">
+              <div class="csw-header"><h3><i class="bi bi-tags-fill"></i> বিষয়ভিত্তিক</h3></div>
+              <div class="cat-tags-cloud">
+                <a href="#" class="cat-tag-pill">নির্বাচন</a>
+                <a href="#" class="cat-tag-pill">সংসদ</a>
+                <a href="#" class="cat-tag-pill">মন্ত্রিসভা</a>
+                <a href="#" class="cat-tag-pill">বিএনপি</a>
+                <a href="#" class="cat-tag-pill">আওয়ামী লীগ</a>
+                <a href="#" class="cat-tag-pill">রাষ্ট্রপতি</a>
+                <a href="#" class="cat-tag-pill">প্রধানমন্ত্রী</a>
+                <a href="#" class="cat-tag-pill">বিরোধী দল</a>
+                <a href="#" class="cat-tag-pill">জাতীয় পার্টি</a>
+                <a href="#" class="cat-tag-pill">রাজনৈতিক সংকট</a>
+              </div>
+            </div>
+
+            <!-- Social Follow -->
+            <div class="cat-sidebar-widget mt-4 social-widget">
+              <div class="csw-header"><h3>আমাদের অনুসরণ করুন</h3></div>
+              <div class="social-follow-grid">
+                <a href="https://www.facebook.com/DailyNewsBDonline" class="sf-btn fb"><i class="bi bi-facebook"></i> ফেসবুক</a>
+                <a href="https://www.youtube.com/@DailyNewsBDonline" class="sf-btn yt"><i class="bi bi-youtube"></i> ইউটিউব</a>
+                <a href="#" class="sf-btn tw"><i class="bi bi-twitter-x"></i> টুইটার</a>
+                <a href="#" class="sf-btn ig"><i class="bi bi-instagram"></i> ইনস্টাগ্রাম</a>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container-fluid px-3 px-lg-5">
+        <div class="footer-about-row">
+          <img src="logo_main.png" alt="Daily News BD" class="footer-logo-img" />
+          <div class="footer-about-text">
+            <p class="footer-about-title">ABOUT US</p>
+            <p>The Daily News BD Online is a promising online news portal of Bangladesh. We collect news from all over the world using actual sources. So you will find the true news here. Be with us, be with truth.</p>
+          </div>
+          <div class="footer-about-social">
+            <a href="https://www.facebook.com/DailyNewsBDonline" class="footer-social-pill" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-pill" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/@DailyNewsBDonline" class="footer-social-pill" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="row g-4 pt-2">
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">CONTACT DETAILS</h4>
+            <p class="footer-contact-text">Bangladesh Office : 2/2, R. K. Mission Road, Motijheel, Dhaka-1203.<br />Mail : dailynewsbdonline@gmail.com<br />Mobile : 01731-828236, 01919-667217</p>
+            <h4 class="footer-col-heading mt-3">USA OFFICE</h4>
+            <p class="footer-contact-text">109-17 205th St, Saint Albans, NY 11412. Phone : +1 (718) 864-3245</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">LONDON OFFICE</h4>
+            <p class="footer-contact-text">8/A Prime Meridian Walk. Canary Wharf, London.<br />Phone : +44 7597 597282</p>
+            <h4 class="footer-col-heading mt-3">UAE OFFICE</h4>
+            <p class="footer-contact-text">Riyadh – Al-Mursalat, District – King, Abdullah Road-12461.</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">EDITOR : MD SAIDUL ISLAM</h4>
+            <p class="footer-contact-text">Chief Editor : SM. Miraz Hossain Tipu</p>
+            <h4 class="footer-col-heading mt-3">EXECUTIVE EDITOR : MD LUTFOR RAHMAN</h4>
+            <p class="footer-contact-text">Mobile : +88 01715-818695</p>
+            <h4 class="footer-col-heading mt-3">DEPUTY EDITOR : FATEMA AKTER RANI</h4>
+            <p class="footer-contact-text">Mobile : +88 01712-898043</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="footer-col-heading">বিভাগ</h4>
+            <ul class="footer-links">
+              <li><a href="news-category.html?cat=জাতীয়">জাতীয়</a></li>
+              <li><a href="news-category.html?cat=রাজনীতি">রাজনীতি</a></li>
+              <li><a href="news-category.html?cat=বাণিজ্য">বাণিজ্য</a></li>
+              <li><a href="news-category.html?cat=আন্তর্জাতিক">আন্তর্জাতিক</a></li>
+              <li><a href="news-category.html?cat=খেলাধুলা">খেলাধুলা</a></li>
+              <li><a href="news-category.html?cat=বিনোদন">বিনোদন</a></li>
+              <li><a href="news-category.html?cat=তথ্যপ্রযুক্তি">তথ্যপ্রযুক্তি</a></li>
+              <li><a href="news-category.html?cat=স্বাস্থ্য">স্বাস্থ্য</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container-fluid px-3 px-lg-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <p>Designed and developed by <a href="https://www.dailynewsbd.online/" target="_blank" class="footer-credit">Daily News BD.</a></p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="index.html">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="#">RTL Version</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop"><i class="bi bi-chevron-up"></i></button>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // Category page: read URL param to set title
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('cat');
+      if (cat) {
+        const titleEl = document.getElementById('catPageTitle');
+        if (titleEl) titleEl.textContent = cat;
+        document.title = cat + ' | Daily News BD';
+      }
+
+      // View toggle
+      const listBtn = document.getElementById('listViewBtn');
+      const gridBtn = document.getElementById('gridViewBtn');
+      const gridCon = document.getElementById('gridViewContainer');
+      const listCon = document.getElementById('listViewContainer');
+
+      if (listBtn && gridBtn) {
+        listBtn.addEventListener('click', function() {
+          listBtn.classList.add('active');
+          gridBtn.classList.remove('active');
+          gridCon.style.display = 'none';
+          listCon.style.removeProperty('display');
+        });
+        gridBtn.addEventListener('click', function() {
+          gridBtn.classList.add('active');
+          listBtn.classList.remove('active');
+          listCon.style.display = 'none';
+          gridCon.style.removeProperty('display');
+        });
+      }
+
+      // Filter tabs
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      // Pagination
+      const pageBtns = document.querySelectorAll('.page-btn:not(.dots)');
+      pageBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          if (this.querySelector('i')) return; // skip arrow buttons
+          pageBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
