@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <!-- ===== UTILITY BAR ===== -->
   <div class="utility-bar">
     <div class="container-fluid px-3 px-lg-5">
@@ -762,13 +761,162 @@
                 <a href="#" class="sf-btn ig"><i class="bi bi-instagram"></i> ইনস্টাগ্রাম</a>
               </div>
             </div>
+            
+            <div class="sticky-sidebar-wrap">
+              <!-- Newsletter Widget -->
+              <div class="cat-sidebar-widget mt-4 sidebar-newsletter">
+                <div class="csw-header"><h3><i class="bi bi-envelope-check-fill"></i> আমাদের নিউজলেটার</h3></div>
+                <div class="snl-body p-3">
+                  <p class="m-0 mb-3" style="font-size: 0.85rem; color: var(--text-secondary);">প্রতিদিনের গুরুত্বপূর্ণ খবর সবার আগে আপনার ইমেইলে পেতে এখনই সাবস্ক্রাইব করুন।</p>
+                  <div class="input-group mb-2">
+                    <input type="email" class="form-control" placeholder="আপনার ইমেইল..." style="font-size: 0.85rem; border-color: var(--border);">
+                    <button class="btn btn-danger" type="button" style="background-color: var(--crimson);"><i class="bi bi-send-fill"></i></button>
+                  </div>
+                  <small style="font-size: 0.72rem; color: var(--text-muted);">আমরা আপনার গোপনীয়তা রক্ষা করি।</small>
+                </div>
+              </div>
 
+              <!-- Popular Categories Widget -->
+              <div class="cat-sidebar-widget mt-4">
+                <div class="csw-header"><h3><i class="bi bi-grid-fill"></i> জনপ্রিয় বিভাগ</h3></div>
+                <ul class="sidebar-cat-list list-unstyled mb-0">
+                  <li><a href="news-category.html?cat=জাতীয়"><span><i class="bi bi-dot"></i> জাতীয়</span> <span class="badge">১২৮</span></a></li>
+                  <li><a href="news-category.html?cat=রাজনীতি"><span><i class="bi bi-dot"></i> রাজনীতি</span> <span class="badge">৯৫</span></a></li>
+                  <li><a href="news-category.html?cat=আন্তর্জাতিক"><span><i class="bi bi-dot"></i> আন্তর্জাতিক</span> <span class="badge">৮৪</span></a></li>
+                  <li><a href="news-category.html?cat=খেলাধুলা"><span><i class="bi bi-dot"></i> খেলাধুলা</span> <span class="badge">৭০</span></a></li>
+                  <li><a href="news-category.html?cat=বিনোদন"><span><i class="bi bi-dot"></i> বিনোদন</span> <span class="badge">৫২</span></a></li>
+                  <li><a href="news-category.html?cat=বাণিজ্য"><span><i class="bi bi-dot"></i> বাণিজ্য</span> <span class="badge">৪৫</span></a></li>
+                </ul>
+              </div>
+
+              <!-- Ad Placeholder -->
+              <div class="cat-sidebar-widget mt-4">
+                <div class="sidebar-ad" style="margin-bottom:0; border:none; box-shadow:none;">
+                  <i class="bi bi-image"></i>
+                  <span>বিজ্ঞাপন • ৩০০×৬০০</span>
+                </div>
+              </div>
+
+              <!-- Interactive Poll Widget -->
+              <div class="cat-sidebar-widget mt-4">
+                <div class="csw-header"><h3><i class="bi bi-patch-question-fill"></i> জনমত জরিপ</h3></div>
+                <div class="poll-widget-body">
+                  <p class="poll-question">আপনি কি মনে করেন নতুন সরকারের প্রথম ১০০ দিনের পদক্ষেপগুলো সঠিক পথে রয়েছে?</p>
+                  <div class="poll-options">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="pollRadio" id="poll1">
+                      <label class="form-check-label" for="poll1">হ্যাঁ, আমি একমত</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="pollRadio" id="poll2">
+                      <label class="form-check-label" for="poll2">না, আমি একমত নই</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="pollRadio" id="poll3">
+                      <label class="form-check-label" for="poll3">মন্তব্য করতে চাই না</label>
+                    </div>
+                  </div>
+                  <button class="poll-btn">ভোট দিন</button>
+                </div>
+              </div>
+
+              <!-- Photo of the Day Widget -->
+              <div class="cat-sidebar-widget mt-4">
+                <div class="csw-header"><h3><i class="bi bi-camera-fill"></i> দিনের সেরা ছবি</h3></div>
+                <div class="photo-day-card">
+                  <img src="https://picsum.photos/seed/pday1/400/300" alt="দিনের সেরা ছবি">
+                  <div class="photo-day-info">
+                    <p>শপথ গ্রহণ শেষে বঙ্গভবনের চমৎকার আলোকসজ্জা।</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Top Contributors Widget -->
+              <div class="cat-sidebar-widget mt-4">
+                <div class="csw-header"><h3><i class="bi bi-people-fill"></i> জনপ্রিয় লেখক</h3></div>
+                <div class="contributors-list">
+                  <a href="#" class="contributor-item">
+                    <img src="https://picsum.photos/seed/user1/60/60" alt="লেখক">
+                    <div class="contributor-info"><strong>এস এম মিরাজ হোসেন টিপু</strong><span>প্রধান সম্পাদক</span></div>
+                  </a>
+                  <a href="#" class="contributor-item">
+                    <img src="https://picsum.photos/seed/user2/60/60" alt="লেখক">
+                    <div class="contributor-info"><strong>লুৎফর রহমান</strong><span>নির্বাহী সম্পাদক</span></div>
+                  </a>
+                  <a href="#" class="contributor-item">
+                    <img src="https://picsum.photos/seed/user3/60/60" alt="লেখক">
+                    <div class="contributor-info"><strong>ফাতেমা আক্তার রানী</strong><span>ডেপুটি এডিটর</span></div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </aside>
         </div>
-
       </div><!-- /row -->
+
+      <!-- ===== MULTIMEDIA GALLERY ===== -->
+      <section class="multimedia-section px-4">
+        <div class="multimedia-header d-flex align-items-center">
+          <h2><i class="bi bi-play-circle-fill me-2" style="color:var(--crimson)"></i> ভিডিও গ্যালারি</h2>
+          <a href="#" class="ms-auto see-all-sm" style="color:#fff">সব ভিডিও <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-3 col-sm-6">
+            <div class="video-card">
+              <img src="https://picsum.photos/seed/vid1/400/225" alt="ভিডিও">
+              <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+              <div class="video-info"><h5>শপথ গ্রহণের মুহূর্ত: এক নজরে বঙ্গভবন</h5></div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="video-card">
+              <img src="https://picsum.photos/seed/vid2/400/225" alt="ভিডিও">
+              <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+              <div class="video-info"><h5>ঢাকার রাজপথে সাধারণ মানুষের প্রতিক্রিয়া</h5></div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="video-card">
+              <img src="https://picsum.photos/seed/vid5/400/225" alt="ভিডিও">
+              <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+              <div class="video-info"><h5>বিদেশের গণমাধ্যমে বাংলাদেশের নতুন সরকার</h5></div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="video-card">
+              <img src="https://picsum.photos/seed/vid4/400/225" alt="ভিডিও">
+              <div class="play-btn-overlay"><i class="bi bi-play-fill"></i></div>
+              <div class="video-info"><h5>রাজনীতি ও ভবিষ্যৎ: বিশ্লেষকদের মতামত</h5></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== NEWSLETTER STRIP ===== -->
+      <div class="newsletter-strip my-5">
+        <div class="row align-items-center g-3">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="nl-icon"><i class="bi bi-envelope-paper-fill"></i></div>
+              <div>
+                <h3 style="color: var(--text-primary);">নিউজলেটারে সাবস্ক্রাইব করুন</h3>
+                <p style="color: var(--text-secondary);">প্রতিদিনের সেরা খবর সরাসরি আপনার ইনবক্সে পান</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="nl-form">
+              <input type="email" placeholder="আপনার ইমেইল লিখুন..." id="newsletterEmail">
+              <button type="button" id="nlSubscribeBtn" style="background:var(--crimson);">সাবস্ক্রাইব <i class="bi bi-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
+
+
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
