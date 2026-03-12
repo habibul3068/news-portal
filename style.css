@@ -545,6 +545,7 @@ ol {
     rgba(0, 0, 0, 0.3) 50%,
     transparent 100%
   );
+  z-index: 1;
 }
 .hero-text-overlay {
   position: absolute;
@@ -552,6 +553,7 @@ ol {
   left: 0;
   right: 0;
   padding: 24px 20px 20px;
+  z-index: 3;
 }
 .story-meta-light {
   font-family: var(--font-ui);
@@ -2086,21 +2088,15 @@ footer .container-fluid {
     background: var(--card-bg);
     border: 1px solid var(--border);
   }
-  .hero-overlay {
-    display: none;
-  }
   .hero-text-overlay {
-    position: relative;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    position: absolute;
+    z-index: 3;
     padding: 14px 16px 16px;
-    background: transparent;
   }
   .hero-headline-overlay {
     font-size: 1rem;
-    color: var(--text-primary);
     margin-bottom: 8px;
-  }
-  .hero-headline-overlay a {
-    color: var(--text-primary);
   }
   .story-meta-light {
     color: var(--text-muted);
